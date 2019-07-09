@@ -1,0 +1,65 @@
+{
+        "bodyTemplate3Data": {
+            "type": "object",
+            "objectId": "bt3Sample",
+            "backgroundImage": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "title": "",
+            "image": {
+                "contentDescription": null,
+                "smallSourceUrl": null,
+                "largeSourceUrl": null,
+                "sources": [
+                    {
+                        "url": "https://pvamu.s3.amazonaws.com/pvamu-logo-small.png",
+                        "size": "small",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    },
+                    {
+                        "url": "https://pvamu.s3.amazonaws.com/pvamu-logo-small.png",
+                        "size": "large",
+                        "widthPixels": 0,
+                        "heightPixels": 0
+                    }
+                ]
+            },
+            "textContent": {
+                "title": {
+                    "type": "PlainText",
+                    "text": "Prairie View A&M University"
+                },
+                "subtitle": {
+                    "type": "PlainText",
+                    "text": "Welcome to MyPanther"
+                },
+                "primaryText": {
+                    "type": "PlainText",
+                    "text": "Mild Gouda is a semi hard cheese with a creamy texture and mild nutty flavor. Easy to cut and grate, it also melts beautifully. Gouda is a Dutch yellow cheese made from cow's milk, and one of the most popular cheeses worldwide. "
+                },
+                "bulletPoint": {
+                    "type": "PlainText",
+                    "text": ""
+                }
+            },
+            "logoUrl": "https://pvamu.s3.amazonaws.com/pvamu-logo-small.png",
+            "hintText": "Try, \"Alexa, ask my panther\""
+        }
+    }

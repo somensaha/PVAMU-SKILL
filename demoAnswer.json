@@ -1,0 +1,23 @@
+{
+    "StudentLibraryFeesReal": "Your current library late fees are $8.25.",
+    "StudentPaymentReceivedReal" : "Your last payment of $1000 was applied to your student balance on April 5, 2019, Your remaining balance is $3000.",
+    "StudentAccountBalanceReal": "Your current balance is $50, Anticipated Balance is $55 Net Balance is $45 For a total balance of $60.",
+    "DiningDollarsReal": "You have $27 Dining Dollars remaining.",
+    "StudentMealPlanReal": "You have 3 meal plan meals left this week.",
+    "StudentGuestPlanReal": "You have 2 guest swipes remaining on your meal plan.",
+    "StudentGradeReal": "Your final grade in Calculus course is A.",
+    "OverallGPAReal": "Your current gpa is 3.82. This only includes completed classes for which grades have been submitted.",
+    "MyAdvisors": "Roy Dalsheim is your advisor.",
+    "MyAdvisorsLocation": "You can find Roy Dalsheim's office at 100 Meserve Hall, Boston, MA 02111.",
+    "GeneralInstructorReal": "Your professor for Calculus is Nicholas Ramsey.",
+    "AccountHoldReal": "No, there is currently no hold on your account.",
+    "FinanceDirectDepositReal": "Yes.",
+    "MyClassScheduleReal": "On Wednesday at 5:30 PM, you have Physics for Engineering. Please go to the myNortheastern portal for your class schedule information.",
+    "NextClassTimeReal": "On Wednesday at 5:30 PM, you have Physics for Engineering.",
+    "HousingSelectionReal": "Your Housing selection time is scheduled for May 5, 2019 at 11:30AM.",
+    "MyRDReal": "Your resident director is Natasha Mundis.",
+    "MailingAddressReal": "Your mailing address is 7 Speare Hall.",
+    "MyLaundryRoomReal": "The laundry room is located at 621 Columbus Avenue.",
+    "NextClassLocationReal": "Physics for Engineering is in 431 Stearns Center.",
+    "ClassDayOfWeekReal": "On Wednesday at 5:30 PM, you have Physics for Engineering."
+}
