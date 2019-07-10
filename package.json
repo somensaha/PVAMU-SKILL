@@ -1,0 +1,19 @@
+{
+  "name": "husky-helper-alexa",
+  "version": "2.0.0",
+  "description": "Husky Helper Alexa Presentation Language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk": "^2.3.0",
+    "aws-sdk": "^2.393.0",
+    "dateformat": "^3.0.3",
+    "request": "^2.88.0",
+    "string-similarity": "^3.0.0",
+    "string-strip-html": "^3.5.0"
+  }
+}

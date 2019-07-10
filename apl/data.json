@@ -28,13 +28,13 @@
                 "largeSourceUrl": null,
                 "sources": [
                     {
-                        "url": "https://pvamu.s3.amazonaws.com/pvamu-logo-small.png",
+                        "url": "https://pvamu-prod.s3.amazonaws.com/pvamu-logo-small.png",
                         "size": "small",
                         "widthPixels": 0,
                         "heightPixels": 0
                     },
                     {
-                        "url": "https://pvamu.s3.amazonaws.com/pvamu-logo-small.png",
+                        "url": "https://pvamu-prod.s3.amazonaws.com/pvamu-logo-small.png",
                         "size": "large",
                         "widthPixels": 0,
                         "heightPixels": 0
@@ -59,7 +59,7 @@
                     "text": ""
                 }
             },
-            "logoUrl": "https://pvamu.s3.amazonaws.com/pvamu-logo-small.png",
+            "logoUrl": "https://pvamu-prod.s3.amazonaws.com/pvamu-logo-small.png",
             "hintText": "Try, \"Alexa, ask my panther\""
         }
     }
