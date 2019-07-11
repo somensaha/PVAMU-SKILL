@@ -16,7 +16,7 @@ module.exports = {
     PVAMUStaticTable: 'AskPVAMUStatic',
     PVAMUDynamicTable: 'AskPVAMUDynamic',
     
-    defaultImage: 'https://pvamu-prod.s3.amazonaws.com/pvamu-logo-large.png',
+    defaultImage: 'https://pvamu-prod.s3.amazonaws.com/pvamu-logo-large1.png',
 
     remindersArray: [
         'Thank you for using My Panther, Just a reminder, don\'t forget to ask about P V A M U. ',
