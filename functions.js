@@ -11,8 +11,7 @@ const stringSimilarity = require('string-similarity');
 
 
 module.exports = {
-    FiterTable: "AskPVAMUCalendarEventFiter",
-    FilterText: "FilterText",
+    getColumn: "Answer",
     dayNames: {0:'Sunday',1:'Monday',2:'Tuesday',3:'Wednesday',4:'Thursday',5:'Friday',6:'Saturday'},
     PVAMUStaticTable: 'AskPVAMUStatic',
     PVAMUDynamicTable: 'AskPVAMUDynamic',
@@ -35,7 +34,7 @@ module.exports = {
     YesPrompt: ' What would you like to know?',
     needtoLinkYourAccount: 'To access this service you need to link your account with Alexa.',
     optOutCategory: 'You have opted out of this category of questions.',
-    welcomeMessage: "Welcome to the My Panther Skill. What would you like to know?",
+    welcomeMessage: "Welcome to the Prairie view A & M university My Panther Skill. What would you like to know?",
     signUpMessage: 'You have not registered with PVAMU portal, Please sign up',
     semilinkWelcomeMessage: "Welcome to the My Panther Skill. ",
 	
@@ -214,30 +213,6 @@ module.exports = {
         // console.log('setTemplateBody::data::::', JSON.stringify(data));
         return data;
     },
-
-    realtimeFormGenerate: function(params = null, obj = null) {
-        var staticPart = params.staticAnsPart;
-        var objKeys = Object.keys(obj);
-        var vtlflag = false;
-        objKeys.forEach(item => {
-            if (obj[item] === null) {
-                return staticPart = params.noValueMsg;
-            }
-
-            if (typeof obj[item] === 'string' && obj[item].trim() === '') {
-                return staticPart = params.noValueMsg;
-            }
-
-            if (obj[item] === 'VTL') {
-                vtlflag = true;
-            }
-            staticPart = staticPart.replace('{'+ item +'}', obj[item]);
-        });
-        if (vtlflag === true) {
-            staticPart =  'Your next class ' +obj.ans2 +' is virtual or online';
-        }
-        return staticPart;
-    }, 
 
     getSlotValue: function(handlerInput) {
         if (handlerInput.requestEnvelope.request.intent.slots !== undefined) {
@@ -425,8 +400,8 @@ module.exports = {
         return new Promise((resolve, reject) => {
             var docClient = new AWS.DynamoDB.DocumentClient();    
             docClient.scan(params, (err, data) => {
-                console.log("within   docclient.scan param object ======" + params);
-                console.log("within   docclient.scan data object ======" + data);
+                console.log("within   docclient.scan param object ======" , params);
+                console.log("within   docclient.scan data object ======" , data);
                 if (err) {
                     //console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
                     console.log("scanSportingEventItem  within error block docclient.scan======");
@@ -500,14 +475,16 @@ module.exports = {
                     if (typeof eventList[0] != 'undefined' && eventList[0] != null) {
                         var datestr = JSON.stringify(eventList[0].Slot);
                         var modifieddate = dateFormat(datestr, "fullDate");
-                        speechText = JSON.stringify(eventList[0].Answer);
-                        speechText = speechText + "is on " + modifieddate + ". ";
+                        speechText = eventList[0].Answer;
+                        speechText = speechText + " is on " + modifieddate + ". ";
                     }
                     else if (typeof eventList[0] == 'undefined' || eventList[0] == null) {
                         console.log("Event: I am inside last else block printing " + slot);
                         speechText = "There is no upcoming events for "+ slot+". ";
         
                     }
+
+                    speechText = speechText.charAt(0).toUpperCase() + speechText.slice(1);
         
                     console.log("speech text after loop:", speechText);
                 }
@@ -516,14 +493,19 @@ module.exports = {
         });
     },
 
-    fnGetNUEvents: function(handlerInput, intentName = null, slot = null) {
+    fnGetPVAMUEvents: function(handlerInput, intentName = null, slot = null) {
         if (typeof slot != 'undefined' && slot != null) {
-            var filterparams = {
-                TableName: this.FiterTable,
-                ProjectionExpression: this.FilterText					
+            var eventparams = {
+                TableName: this.PVAMUDynamicTable,
+                FilterExpression: "#slot = :slotval and #intent = :intentval",
+                ExpressionAttributeNames: {
+                    "#slot": "Slot",
+                    "#intent":"IntentName"
+                },
+                ExpressionAttributeValues: { ":slotval": slot ,":intentval":intentName}					
             };
 
-            return this.filterKeywordsChecking(filterparams, slot).then((obj) => {
+            return this.getPVAMUDataEvent(eventparams, slot).then((obj) => {
                 return this.formSpeech(handlerInput, obj);
             })
 
@@ -533,92 +515,48 @@ module.exports = {
         }
     },
 
-    filterKeywordsChecking: function(filterparams, slot) {
+    getPVAMUDataEvent: function(eventparams, slot) {
         return new Promise((resolve, reject) => {
             var docClient = new AWS.DynamoDB.DocumentClient();
-            var filterText = [];
+            var dataText = [];
             var obj = null;
-            docClient.scan(filterparams, (err, data) => {
-                console.log("within scanFiterDynamoItem docclient.scan param object ======", filterparams, "data", data);
+            var ch = this;
+            docClient.scan(eventparams, (err, data) => {
+                console.log("within scanFiterDynamoItem docclient.scan param object ======", eventparams, "data", data);
         
                 if (err) {
                     console.error("Unable to read item. Error JSON:", JSON.stringify(err));
+                    obj = {
+                        speechText: 'I can not find any event data. What else would you like to know?',
+                        displayText: 'I can not find any event data. What else would you like to know?',
+                        repromptSpeechText: this.listenspeech,
+                        sessionEnd: false
+                    }
+                    resolve (obj);
                 } else {
-                    if (data.Items.length != 0) {
+                   if (data.Items.length != 0) {
                         console.log("count of items:", data.Items.length);
                         data.Items.forEach(function (itemdata) {
-                            filterText.push(itemdata.FilterText);
+                            dataText.push(itemdata);
                         });
-                    }
-                    console.log("scanFiterDynamoItem  speech text after loop:", JSON.stringify(filterText));
-                    var eventsDataAPIURL = "http://calendar.northeastern.edu/api/2/events?pp=20&start=" + slot;
-                    console.log("eventsDataAPIURL url: ", eventsDataAPIURL);
-                    var dateObj = new Date(slot);
-                    console.log("day dateObj: " + dateObj);
-                    var dayNum = dateObj.getDay();
-                    console.log("day dayNum: " + dayNum);
-                    var dayName = this.dayNames[dayNum];
-                    console.log("day dayName: " + dayName);
-                    
-                    var titlearr = [];
-                    var locationarr = [];
-                    var answercount = 0;
+                        console.log("dataText::"+JSON.stringify(dataText));
+                        var titlearr = [];
+                        var answercount = 0;
 
-                    var message = null;
-                    var maxlength = 0;
-                    var ch = this;
-                    request(eventsDataAPIURL, function(err, response, body) {
-                        if (err) {
-                            console.log("error", JSON.stringify(err));
-                            obj = {
-                                speechText: 'I can not find any event data. What else would you like to know?',
-                                displayText: 'I can not find any event data. What else would you like to know?',
-                                repromptSpeechText: this.listenspeech,
-                                sessionEnd: false
-                            }
-                            resolve (obj);
-                        } else {
-                            if (response.statusCode === 200) {
-                                var eventsData = JSON.parse(body);
-                                var eventsDataArray = ch.sortEventsByKey(eventsData.events, 'last_date');
-                
-                                message = " On " + dayName;
-                                console.log(dayName);
-                
-                                if (eventsDataArray.length == 0) {
-                                    message += ' there will be no events on campus. ';
-                                } else {
-                                    var itemsNum = eventsDataArray.length;
+                        var message = null;
+                        var maxlength = 0;
+                        var eventsDataArray = ch.sortEventsByKey(dataText, 'Slot');
+                        console.log("eventsDataArray::", JSON.stringify(eventsDataArray));
+                        message = " On " + new Date(eventsDataArray[0].Slot).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                        // .toLocaleDateString("en-US", options);
+                                                 
+                        var itemsNum = eventsDataArray.length;
 
-                                    for (var z = 0; z < itemsNum; z++) {
-                                        let hasfilteredword = false;
-                                        var title = eventsDataArray[z].event.title;
-                                        var description = eventsDataArray[z].event.description_text;
-                                        var titlelower = title.toLowerCase();
-                                        var descriptionlower = description.toLowerCase();
-                                        var location = eventsDataArray[z].event.location_name;
-                                        if (location != "") {
-                                            location = " located at " + location;
-                                        }
-                                        for (var i = 0; i < filterText.length; i++) {
-                                            var filterword = filterText[i];
-                                            //var answer = itemdata.Answer;
-                                            console.log("in loop filterword =====:", filterword);
-                                            console.log("in loop :", titlelower);
-                                            console.log("in loop :", descriptionlower);
-                                            if (titlelower.includes(filterword) == true || descriptionlower.includes(filterword) == true) { 	hasfilteredword = true;
-                                                break;
-                                            }
-                                        }
-                                        if (hasfilteredword == false) {
-                                            console.log ("hasfilteredword =========" + title);
-                                            answercount++;
-                                            titlearr.push(title.trim());
-                                            locationarr.push(location.trim());
-                                        }
-                                    }
-                                }
-
+                        for (var z = 0; z < itemsNum; z++) {
+                           var answer = eventsDataArray[z].Answer;
+                           answercount++;
+                           titlearr.push(answer.trim());
+                        }
                                 if (answercount > 5) {
                                     answercount = 5;
                                     message = message + " top five events are ";
@@ -627,10 +565,13 @@ module.exports = {
                                 }
                                 
                                 for (var y = 0; y < answercount; y++) {
-                                    if(y == answercount - 1 && y > 1){
-                                            message += " And ";
-                                    }	
-                                    message += " "+titlearr[y]+" "+locationarr[y]+". ";
+                                    if (y === answercount - 1 && y !== 0) {
+                                        message += " And " + titlearr[y] + ". ";
+                                    } else if (answercount === 1) {
+                                        message += titlearr[y] + ". ";
+                                    } else {
+                                        message += titlearr[y] + ", ";
+                                    }
                                 }
 
                                 var sanatizeSSMLMessage =  message.replace(/&/g, " and ");
@@ -642,25 +583,26 @@ module.exports = {
                                     repromptSpeechText: ch.listenspeech,
                                     sessionEnd: false
                                 }
-                            } else {
+                    } else {
                                 obj = {
                                     speechText: 'I can not find any event data. What else would you like to know?',
                                     displayText: 'I can not find any event data. What else would you like to know?',
                                     repromptSpeechText: ch.listenspeech,
                                     sessionEnd: false
                                 }
-                            }
-                            resolve (obj);
-                        }
-                    });
+                    }
+                    resolve (obj);
                 }
-            });
-        });
+                           
+                });
+            });  
     },
 
     sortEventsByKey: function(array, key) {
+        console.log("array::", JSON.stringify(array));
+        console.log("key::"+key);
         return array.sort(function (a, b) {
-            var x = a.event[key]; var y = b.event[key];
+            var x = a[key]; var y = b[key];
             return ((x < y) ? -1 : ((x > y) ? 1 : 0));
         });
     }

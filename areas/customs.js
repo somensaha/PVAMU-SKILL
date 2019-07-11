@@ -7,7 +7,7 @@ const AthleticsNextSportsEvent = {
     }, handle(handlerInput) {
         console.log("AthleticsNextSportsEvent Handler::", handlerInput.requestEnvelope.request.intent.name);
         var intentName = handlerInput.requestEnvelope.request.intent.name;
-        var skillSlotValue = handlerInput.requestEnvelope.request.intent.slots.nusportsevent.value;
+        var skillSlotValue = handlerInput.requestEnvelope.request.intent.slots.pvamusportsevent.value;
         console.log("AthleticsNextSportsEvent===============slot value==" + skillSlotValue +" Intent Name::" +intentName);
         if (typeof skillSlotValue != 'undefined' && skillSlotValue != null) {
             var skillSlotValueLower = skillSlotValue.toLowerCase().trim();
@@ -70,7 +70,7 @@ const AthleticsNextSportsEvent = {
 				};
             }
             
-            console.log('params :  ' + params);
+            console.log('params :  ', params);
 
             return allFuctions.scanSportingEventItem(slotnamereplaced, params).then((myResult) => {
                 var obj = {
@@ -93,7 +93,6 @@ const DefinedSlotIntents = {
             && (
                 handlerInput.requestEnvelope.request.intent.name === 'GetBuildingAddress'
                 || handlerInput.requestEnvelope.request.intent.name === 'GetPhoneNumber'
-                || handlerInput.requestEnvelope.request.intent.name === 'AthleticsPhoneNumber'
             );
     },
     handle(handlerInput) {
@@ -124,21 +123,21 @@ const DefinedSlotIntents = {
     }
 }
 
-const getNUEventsHandler = {
+const getPVAMUEventsHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest' 
-            && handlerInput.requestEnvelope.request.intent.name === 'getNUEvents';
+            && handlerInput.requestEnvelope.request.intent.name === 'getPVAMUEvents';
     },
     handle(handlerInput) {
         var intentName = handlerInput.requestEnvelope.request.intent.name;
         var slot = handlerInput.requestEnvelope.request.intent.slots.eventdate.value;
-        console.log("getNUEventsHandler Handler::", intentName, slot);
-        return allFuctions.fnGetNUEvents(handlerInput, intentName, slot);
+        console.log("getPVAMUEvents Handler::", intentName, slot);
+        return allFuctions.fnGetPVAMUEvents(handlerInput, intentName, slot);
     }
 }
 
 module.exports = [ 
     AthleticsNextSportsEvent,
-    getNUEventsHandler,
+    getPVAMUEventsHandler,
     DefinedSlotIntents
 ];
