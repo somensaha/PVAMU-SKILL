@@ -98,13 +98,13 @@ const DefinedSlotIntents = {
     handle(handlerInput) {
         console.log("DefinedSlotIntents Handler::", handlerInput.requestEnvelope.request.intent.name);
         var intentName = handlerInput.requestEnvelope.request.intent.name;
-        var slot = null;
-        if (intentName === 'GetPhoneNumber') {
-            slot = handlerInput.requestEnvelope.request.intent.slots.OfficePhoneNumber.value.toLowerCase().replace(/[^A-Z0-9]+/ig, "");
-            console.log("slot for GetPhoneNumber::"+slot)
-        } else {
-            slot = handlerInput.requestEnvelope.request.intent.slots.buildingname.value.toLowerCase().replace(/[^A-Z0-9]+/ig, "");
-        }
+        var slot = allFuctions.getSlotValue(handlerInput).toLowerCase().replace(/[^A-Z0-9]+/ig, "");
+        // if (intentName === 'GetPhoneNumber') {
+        //     slot = handlerInput.requestEnvelope.request.intent.slots.OfficePhoneNumber.value.toLowerCase().replace(/[^A-Z0-9]+/ig, "");
+        //     console.log("slot for GetPhoneNumber::"+slot)
+        // } else {
+        //     slot = handlerInput.requestEnvelope.request.intent.slots.buildingname.value.toLowerCase().replace(/[^A-Z0-9]+/ig, "");
+        // }
         return allFuctions.DynamoDBScan(slot, handlerInput.requestEnvelope.request.intent.name, allFuctions.PVAMUStaticTable).then((data) => {
             var obj = {
                 speechText: allFuctions.noValueReturned,

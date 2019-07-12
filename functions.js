@@ -480,7 +480,7 @@ module.exports = {
                     }
                     else if (typeof eventList[0] == 'undefined' || eventList[0] == null) {
                         console.log("Event: I am inside last else block printing " + slot);
-                        speechText = "There is no upcoming events for "+ slot+". ";
+                        speechText = "There are no upcoming events for "+ slot+". ";
         
                     }
 
@@ -585,8 +585,8 @@ module.exports = {
                                 }
                     } else {
                                 obj = {
-                                    speechText: 'I can not find any event data. What else would you like to know?',
-                                    displayText: 'I can not find any event data. What else would you like to know?',
+                                    speechText: 'There are no events on campus. What else would you like to know?',
+                                    displayText: 'There are no events on campus. What else would you like to know?',
                                     repromptSpeechText: ch.listenspeech,
                                     sessionEnd: false
                                 }
