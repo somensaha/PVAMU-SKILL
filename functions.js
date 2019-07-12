@@ -34,7 +34,7 @@ module.exports = {
     YesPrompt: ' What would you like to know?',
     needtoLinkYourAccount: 'To access this service you need to link your account with Alexa.',
     optOutCategory: 'You have opted out of this category of questions.',
-    welcomeMessage: "Welcome to the Prairie view A & M university My Panther Skill. What would you like to know?",
+    welcomeMessage: "Welcome to the Prairie view <sub alias=\"A and M\">A&M</sub> University My Panther Skill. What would you like to know?",
     signUpMessage: 'You have not registered with PVAMU portal, Please sign up',
     semilinkWelcomeMessage: "Welcome to the My Panther Skill. ",
 	
@@ -564,14 +564,17 @@ module.exports = {
                         var itemsNum = eventsDataArray.length;
 
                         for (var z = 0; z < itemsNum; z++) {
-                           var answer = eventsDataArray[z].EventTitle + ' on ' + eventsDataArray[z].EventDateTime + (eventsDataArray[z].SportsEventLocation.trim() !== '' ? ' at ' + eventsDataArray[z].SportsEventLocation : '');
+                           var answer = eventsDataArray[z].EventTitle + ' on ' + eventsDataArray[z].EventDateTime + (eventsDataArray[z].SportsEventLocation.trim() !== '' ? ' at <say-as interpret-as="address">' + eventsDataArray[z].SportsEventLocation + "</say-as>" : '');
                            answercount++;
                            titlearr.push(answer.trim());
                         }
                                 if (answercount > 5) {
                                     answercount = 5;
                                     message = message + "Top five events are: ";
-                                } else {
+                                } else if (answercount == 1){
+                                    message = message + "The event is: ";
+                                }
+                                else {
                                     message = message + "The events are: ";
                                 }
                                 
@@ -586,7 +589,8 @@ module.exports = {
                                 }
 
                                 var sanatizeSSMLMessage =  message.replace(/&/g, " and ");
-                                sanatizeSSMLMessage =  sanatizeSSMLMessage.replace(/quot;/g, " ");
+                                //sanatizeSSMLMessage =  sanatizeSSMLMessage.replace(/quot;/g, " ");
+                                
                                 console.log(sanatizeSSMLMessage);
                                 obj = {
                                     speechText: sanatizeSSMLMessage + ' What else would you like to know?',
