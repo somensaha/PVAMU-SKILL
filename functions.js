@@ -510,8 +510,19 @@ module.exports = {
             })
 
         } else {
-            const unhandled = require('./areas/unhandled');
-            return unhandled.handle(handlerInput);
+            var currentTime = new Date(new Date().toLocaleDateString('en-US', {hour: '2-digit', minute: '2-digit', timeZone: 'America/Chicago'})).getTime();
+            var eventparams = {
+                TableName: this.PVAMUDynamicTable,
+                FilterExpression: "#SlotInMillis > :SlotInMillisVal and #intent = :intentval",
+                ExpressionAttributeNames: {
+                    "#SlotInMillis": "SlotInMillis",
+                    "#intent":"IntentName"
+                },
+                ExpressionAttributeValues: { ":SlotInMillisVal": currentTime ,":intentval":intentName}					
+            };
+            return this.getPVAMUDataEvent(eventparams, slot).then((obj) => {
+                return this.formSpeech(handlerInput, obj);
+            })
         }
     },
 
@@ -546,22 +557,22 @@ module.exports = {
                         var message = null;
                         var maxlength = 0;
                         var eventsDataArray = ch.sortEventsByKey(dataText, 'Slot');
-                        console.log("eventsDataArray::", JSON.stringify(eventsDataArray));
-                        message = " On " + new Date(eventsDataArray[0].Slot).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                        console.log("eventsDataArray::", eventsDataArray);
+                        message = '';
                         // .toLocaleDateString("en-US", options);
                                                  
                         var itemsNum = eventsDataArray.length;
 
                         for (var z = 0; z < itemsNum; z++) {
-                           var answer = eventsDataArray[z].Answer;
+                           var answer = eventsDataArray[z].EventTitle + ' on ' + eventsDataArray[z].EventDateTime + (eventsDataArray[z].SportsEventLocation.trim() !== '' ? ' at ' + eventsDataArray[z].SportsEventLocation : '');
                            answercount++;
                            titlearr.push(answer.trim());
                         }
                                 if (answercount > 5) {
                                     answercount = 5;
-                                    message = message + " top five events are ";
+                                    message = message + "Top five events are: ";
                                 } else {
-                                    message = message + " events are ";
+                                    message = message + "The events are: ";
                                 }
                                 
                                 for (var y = 0; y < answercount; y++) {
