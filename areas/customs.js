@@ -51,7 +51,7 @@ const AthleticsNextSportsEvent = {
 						":answer_val": slotnamereplaced,
 						":women_val": "women's"
 					},
-					ProjectionExpression: "IntentName, Slot, Answer"
+					ProjectionExpression: "IntentName, Slot, Answer,EventTitle,EventDateTime,SportsEventLocation"
 				};
 			}
 			else { // all conditions women
@@ -66,7 +66,7 @@ const AthleticsNextSportsEvent = {
 						":intent_val": intentName.trim(),
 						":answer_val": slotnamereplaced
 					},
-					ProjectionExpression: "IntentName, Slot, Answer"
+					ProjectionExpression: "IntentName, Slot, Answer,EventTitle,EventDateTime,SportsEventLocation"
 				};
             }
             
