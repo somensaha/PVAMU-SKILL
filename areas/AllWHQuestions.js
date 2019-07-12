@@ -10,12 +10,13 @@ const AllWHQuestions = {
     handle(handlerInput) {
         console.log("AllWHQuestions Handler:: ", handlerInput);
         const currentIntent = handlerInput.requestEnvelope.request.intent;
-        var serviceType = handlerInput.requestEnvelope.request.intent.slots.searchphrase;
+        // var serviceType = handlerInput.requestEnvelope.request.intent.slots.searchphrase;
+        var serviceType = allFuctions.getSlotValue(handlerInput);
 
-        console.log("AllWHQuestions Handler:: currentIntent::" +currentIntent.name+" serviceType::" +serviceType.value);
+        console.log("AllWHQuestions Handler:: currentIntent::" +currentIntent.name+" serviceType::" +serviceType);
 
         if (typeof serviceType != 'undefined' && serviceType != null) {
-            serviceType = serviceType.value.toLowerCase();
+            serviceType = serviceType.toLowerCase();
             serviceType = serviceType.trim();
             serviceType = serviceType.replace(/\s|\.|\-/g, '');
             return allFuctions.slotForAllWhatIs(handlerInput, serviceType);
