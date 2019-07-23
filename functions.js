@@ -34,7 +34,7 @@ module.exports = {
     YesPrompt: ' What would you like to know?',
     needtoLinkYourAccount: 'To access this service you need to link your account with Alexa.',
     optOutCategory: 'You have opted out of this category of questions.',
-    welcomeMessage: "Welcome to the Prairie view <sub alias=\"A and M\">A&M</sub> University My Panther Skill. What would you like to know?",
+    welcomeMessage: "Welcome to the Prairie view <sub alias=\"A and M\">A & M</sub> University My Panther Skill. What would you like to know?",
     signUpMessage: 'You have not registered with PVAMU portal, Please sign up',
     semilinkWelcomeMessage: "Welcome to the My Panther Skill. ",
 	
