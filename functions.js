@@ -222,7 +222,7 @@ module.exports = {
                 return handlerInput.requestEnvelope.request.intent.slots[item].resolutions !== undefined;
             })[0];
             if (slotObj !== undefined) {
-                var slotValue = handlerInput.requestEnvelope.request.intent.slots[slotObj].resolutions.resolutionsPerAuthority[0].values[0].value.name;    
+                var slotValue = handlerInput.requestEnvelope.request.intent.slots[slotObj].resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase();    
             } else {
                 var slotValue = null;                
             }

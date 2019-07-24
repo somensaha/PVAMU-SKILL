@@ -8,6 +8,7 @@ const CareerService = require('./areas/CareerService');
 const FinancialAid = require('./areas/FinancialAid');
 const International = require('./areas/International');
 const VolunteersService = require('./areas/VolunteersService');
+const Leave = require('./areas/Leave');
 const APP_ID = process.env.APP_ID;
 
 const LaunchRequestHandler = {
@@ -168,7 +169,7 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     LaunchRequestHandler,
-    Unhandled,...Customs,...Parking,
+    Unhandled,...Customs,...Parking,...Leave,
     ...CareerService,...FinancialAid,...International,...VolunteersService,...AllWhQuestions,
     HelpIntentHandler, PauseIntentHandler, YesIntentHandler, 
     OtherBuiltinHanders, FallbackIntentHandler, SessionEndedRequestHandler,CancelAndStopIntentHandler
