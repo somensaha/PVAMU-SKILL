@@ -19,10 +19,19 @@ module.exports = {
     defaultImage: 'https://pvamu-prod.s3.amazonaws.com/pvamu-logo-large1.png',
 
     remindersArray: [
-        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about P V A M U. ',
-        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Academics. ',
-        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Campus Life.',
-        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Admissions. '
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Disability Center. ',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Health and Counseling. ',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Financial Aid.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Career Services.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Registrar.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about International.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Student Conduct.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Volunteers Services.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Student Engagement.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Housing.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Dean of Students.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Library.',
+        'Thank you for using My Panther, Just a reminder, don\'t forget to ask about Student Employment. '
     ],
 
     daysArray: ['','monday','tuesday','wednesday','thursday','friday','saturday','sunday'],
