@@ -57,16 +57,17 @@ const AthleticsNextSportsEvent = {
 			else { // all conditions women
 				var params = {
 					TableName: allFuctions.PVAMUDynamicTable,
-					FilterExpression: "#intent = :intent_val and contains (#answer, :answer_val)",
+					FilterExpression: "#intent = :intent_val and contains (#eventTitle, :eventTitle_val) or #eventType=:eventTitle_val",
 					ExpressionAttributeNames: {
 						"#intent": 'IntentName',
-						"#answer": 'Answer'
+                        "#eventTitle": 'EventTitle',
+                        "#eventType": 'SportsEventType'
 					},
 					ExpressionAttributeValues: {
 						":intent_val": intentName.trim(),
-						":answer_val": slotnamereplaced
+						":eventTitle_val": slotnamereplaced
 					},
-					ProjectionExpression: "IntentName, Slot, Answer,EventTitle,EventDateTime,SportsEventLocation"
+					ProjectionExpression: "IntentName, Slot, Answer,EventTitle,EventDateTime,SportsEventLocation,SportsEventType"
 				};
             }
             

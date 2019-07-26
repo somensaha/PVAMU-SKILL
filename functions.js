@@ -475,8 +475,8 @@ module.exports = {
                     if (typeof eventList[0] != 'undefined' && eventList[0] != null) {
                         var datestr = JSON.stringify(eventList[0].Slot);
                         var modifieddate = dateFormat(datestr, "fullDate");
-                        speechText = eventList[0].EventTitle + " is on " +eventList[0].EventDateTime+" at "+eventList[0].SportsEventLocation;
-                        speechText = speechText + " is on " + modifieddate + ". ";
+                        speechText = eventList[0].EventTitle + " is on " +eventList[0].EventDateTime+" at "+eventList[0].SportsEventLocation+ ". ";
+                        //speechText = speechText + " is on " + modifieddate + ". ";
                     }
                     else if (typeof eventList[0] == 'undefined' || eventList[0] == null) {
                         console.log("Event: I am inside last else block printing " + slot);

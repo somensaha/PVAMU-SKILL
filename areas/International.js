@@ -66,4 +66,15 @@ const AddressUpdateRequest = {
     }
 }
 
-module.exports = [ SevisFeeQuery,UsEntry,UsWorkPermission,SpouseSchoolPermission,SpouseWorkPermission,AddressUpdateRequest];
+const GetSickNotes = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest' 
+            && handlerInput.requestEnvelope.request.intent.name === 'GetSickNotes';
+    },
+    handle(handlerInput) {
+        console.log("FinancialAid Handler::");
+        return allFuctions.setDynamoParams(handlerInput);
+    }
+}
+
+module.exports = [SevisFeeQuery,UsEntry,UsWorkPermission,SpouseSchoolPermission,SpouseWorkPermission,AddressUpdateRequest,GetSickNotes];

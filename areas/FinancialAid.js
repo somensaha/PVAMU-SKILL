@@ -22,10 +22,10 @@ const ParentsSeparation = {
     }
 }
 
-const SpeialCircumstances = {
+const SpecialCircumstances = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest' 
-            && handlerInput.requestEnvelope.request.intent.name === 'SpeialCircumstances';
+            && handlerInput.requestEnvelope.request.intent.name === 'SpecialCircumstances';
     },
     handle(handlerInput) {
         console.log("FinancialAid Handler::");
@@ -44,4 +44,4 @@ const FAFSAInformation = {
     }
 }
 
-module.exports = [ FinancialAid,ParentsSeparation,SpeialCircumstances,FAFSAInformation];
+module.exports = [ FinancialAid,ParentsSeparation,SpecialCircumstances,FAFSAInformation];
