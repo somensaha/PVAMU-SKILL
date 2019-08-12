@@ -178,6 +178,28 @@ module.exports = {
             obj.repromptSpeechText = obj.repromptSpeechText.replace('&', 'and');
             handler.reprompt(obj.repromptSpeechText);
         }
+
+        if (obj.addConfirmIntentDirective !== undefined && obj.addConfirmIntentDirective !== null) {
+            console.log('addConfirmIntentDirective', obj.addConfirmIntentDirective);
+            handler.addConfirmIntentDirective({
+                name: obj.addConfirmIntentDirective,
+                confirmationStatus: 'CONFIRMED',
+                slots: obj.slots
+            })
+        }
+
+        if (obj.addElicitSlotDirective !== undefined && obj.addElicitSlotDirective !== null) {
+            console.log('addElicitSlotDirective', obj.addElicitSlotDirective);
+            handler.addElicitSlotDirective(obj.addElicitSlotDirective);
+        }
+
+        if (obj.addDelegateDirective !== undefined && obj.addDelegateDirective !== null) {
+            console.log('addDelegateDirective', obj.addDelegateDirective);
+            handler.addDelegateDirective({
+                name: obj.addDelegateDirective,
+                slots: obj.slots
+            })
+        }
         // if (handler.requestEnvelope !== undefined) {
         //     if (handler.requestEnvelope.session.new == true && handler.requestEnvelope.request.type == "IntentRequest") {
         //         handler.withShouldEndSession(true);
@@ -629,5 +651,14 @@ module.exports = {
             var x = a[key]; var y = b[key];
             return ((x < y) ? -1 : ((x > y) ? 1 : 0));
         });
+    },
+
+
+    getDialogSlotValue: function(slotParam) {
+        if (slotParam.value) {
+            return slotParam.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        } else {
+            return null;
+        }
     }
 }
