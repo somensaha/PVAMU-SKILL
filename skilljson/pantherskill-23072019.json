@@ -1,0 +1,2421 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my panther",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AllWHQuestions",
+                    "slots": [
+                        {
+                            "name": "searchphrase",
+                            "type": "WHSlot"
+                        }
+                    ],
+                    "samples": [
+                        "how do i {searchphrase}",
+                        "when {searchphrase}",
+                        "I need to {searchphrase}",
+                        "How should I {searchphrase}",
+                        "Do I need {searchphrase}",
+                        "What information should be {searchphrase}",
+                        "Do I have to {searchphrase}",
+                        "Who should {searchphrase}",
+                        "Do I have {searchphrase}",
+                        "Why is {searchphrase}",
+                        "Why do I {searchphrase}",
+                        "Why was I {searchphrase}",
+                        "How can I see {searchphrase}",
+                        "What is the difference between {searchphrase}",
+                        "When do i {searchphrase} loans",
+                        "what {searchphrase} are available",
+                        "Can I get a {searchphrase}",
+                        "Can all {searchphrase}",
+                        "What documentation {searchphrase}",
+                        "What types of {searchphrase}",
+                        "What qualifies {searchphrase}",
+                        "who owns {searchphrase}",
+                        "from where I can {searchphrase}",
+                        "who is the {searchphrase}",
+                        "{searchphrase} whom should I contact",
+                        "tell the {searchphrase}",
+                        "whom to {searchphrase}",
+                        "what time is the {searchphrase}",
+                        "what type of {searchphrase}",
+                        "tell me the {searchphrase}",
+                        "what time is {searchphrase}",
+                        "when do we have {searchphrase}",
+                        "What features does {searchphrase}",
+                        "Tell about {searchphrase}",
+                        "what to do {searchphrase}",
+                        "what features  are {searchphrase}",
+                        "what features should we have {searchphrase}",
+                        "what features do we have {searchphrase}",
+                        "tell me about {searchphrase}",
+                        "what is the name of {searchphrase}",
+                        "what is name of {searchphrase}",
+                        "when is the {searchphrase}",
+                        "when is {searchphrase}",
+                        "where do I {searchphrase}",
+                        "where do I go for {searchphrase}",
+                        "where can I {searchphrase}",
+                        "what can I {searchphrase}",
+                        "why should I {searchphrase}",
+                        "how do you {searchphrase}",
+                        "when does the {searchphrase}",
+                        "when do the {searchphrase}",
+                        "what are the {searchphrase}",
+                        "what {searchphrase}",
+                        "what is an {searchphrase}",
+                        "what is a {searchphrase}",
+                        "{searchphrase}",
+                        "who do I {searchphrase}",
+                        "how does {searchphrase}",
+                        "what does  {searchphrase}",
+                        "what should I do if {searchphrase}",
+                        "how can {searchphrase}",
+                        "how is {searchphrase}",
+                        "when are {searchphrase}",
+                        "what should I {searchphrase}",
+                        "Are there {searchphrase}",
+                        "I want {searchphrase}",
+                        "what happens if {searchphrase}",
+                        "Tell me {searchphrase}",
+                        "Give me {searchphrase}",
+                        "who is {searchphrase}",
+                        "Is there {searchphrase}",
+                        "when does {searchphrase}",
+                        "what are {searchphrase}",
+                        "I need {searchphrase}",
+                        "when will {searchphrase}",
+                        "Can I {searchphrase}",
+                        "May I {searchphrase}",
+                        "what if {searchphrase}",
+                        "what if I {searchphrase}",
+                        "what do I do if {searchphrase}",
+                        "when will I {searchphrase}",
+                        "what do I do if I {searchphrase}",
+                        "how can I {searchphrase}",
+                        "when can I {searchphrase}",
+                        "how long does it {searchphrase}",
+                        "how many {searchphrase}",
+                        "when does  {searchphrase}",
+                        "when do {searchphrase}",
+                        "when do my {searchphrase}",
+                        "what do I {searchphrase}",
+                        "how much {searchphrase}",
+                        "what is the {searchphrase}",
+                        "what is {searchphrase}",
+                        "when does my {searchphrase}",
+                        "What items are {searchphrase}",
+                        "What hours {searchphrase}",
+                        "Does {searchphrase}",
+                        "Are {searchphrase}",
+                        "Do {searchphrase}",
+                        "How long do {searchphrase}",
+                        "Where do {searchphrase}",
+                        "Where is the {searchphrase}",
+                        "Can I have {searchphrase}",
+                        "Can {searchphrase}",
+                        "Who {searchphrase}",
+                        "How do I register for {searchphrase}  ",
+                        "Who are the {searchphrase}  ",
+                        "Why have my {searchphrase} ",
+                        "Why were my {searchphrase}",
+                        "what if all {searchphrase}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.SelectIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StartOverIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "okay",
+                        "Sure",
+                        "OK",
+                        "Yes"
+                    ]
+                },
+                {
+                    "name": "AMAZON.ShuffleOffIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ShuffleOnIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetBuildingAddress",
+                    "slots": [
+                        {
+                            "name": "buildingname",
+                            "type": "buildingname"
+                        }
+                    ],
+                    "samples": [
+                        "where are {buildingname}",
+                        "Will {buildingname}",
+                        "Why do {buildingname}",
+                        "Where do I {buildingname}",
+                        "tell me the address of {buildingname}",
+                        "give me the address of {buildingname}",
+                        "location of {buildingname}",
+                        "{buildingname} location",
+                        "how do I reach {buildingname}",
+                        "how to reach {buildingname}",
+                        "What is the office location of  {buildingname}",
+                        "get me the address for {buildingname}",
+                        "give me the location of {buildingname}",
+                        "tell me the location of {buildingname}",
+                        "where can I find {buildingname}",
+                        "how do I get to the {buildingname}",
+                        "where is  {buildingname} ",
+                        "where is  {buildingname} office",
+                        "{buildingname}",
+                        "how do I find the {buildingname} office",
+                        "where is the {buildingname} office located",
+                        "where is the {buildingname} office",
+                        "How can I reach the {buildingname} office",
+                        "I want to go the {buildingname} office",
+                        "how can I reach office of the {buildingname}",
+                        "How can I reach {buildingname} office",
+                        "How Can I reach the {buildingname}",
+                        "I want to go to the office of the {buildingname}",
+                        "I want to go to the {buildingname}",
+                        "where can I find office of the {buildingname}",
+                        "where can I find {buildingname} office",
+                        "where can I find the {buildingname} office",
+                        "where can I find the {buildingname}",
+                        "where is office of the {buildingname}",
+                        "give me the direction of the",
+                        "what is the location of",
+                        "what is the direction to go to",
+                        "what is the address of",
+                        "I want to reach",
+                        "what's the direction of",
+                        "what's the direction of {buildingname}",
+                        "what's the direction for {buildingname}",
+                        "I want to reach {buildingname}",
+                        "what is the address of {buildingname} building",
+                        "where is {buildingname} building",
+                        "where is {buildingname} building located",
+                        "what is the direction to go to {buildingname}",
+                        "what is the address of the {buildingname} ",
+                        "what is the address of {buildingname}",
+                        "what is the location of {buildingname}",
+                        "give me the direction of the {buildingname}",
+                        "How do I get to  {buildingname}",
+                        "where is the {buildingname}  located",
+                        "where is {buildingname}  located",
+                        "what is the address for {buildingname}",
+                        "how do I get to {buildingname}",
+                        "where is the {buildingname} located",
+                        "where is {buildingname} located",
+                        "where is the {buildingname}",
+                        "How do I {buildingname}",
+                        "where are the {buildingname} located",
+                        "How can I {buildingname}",
+                        "What is the {buildingname}",
+                        "What's the {buildingname}",
+                        "How to {buildingname}",
+                        "What do I {buildingname}",
+                        "Where can I see {buildingname}",
+                        "Can I {buildingname}",
+                        "What are {buildingname}"
+                    ]
+                },
+                {
+                    "name": "GetPhoneNumber",
+                    "slots": [
+                        {
+                            "name": "OfficePhoneNumber",
+                            "type": "officephno"
+                        }
+                    ],
+                    "samples": [
+                        "What if I {OfficePhoneNumber}",
+                        "What if I get {OfficePhoneNumber}",
+                        "Can information on {OfficePhoneNumber}",
+                        "where can I contact {OfficePhoneNumber} office",
+                        "give me the contact number of {OfficePhoneNumber}",
+                        "tell me the phone number of {OfficePhoneNumber}",
+                        "where can I contact {OfficePhoneNumber}",
+                        "what is contact of {OfficePhoneNumber}",
+                        "what is the contact of {OfficePhoneNumber}",
+                        "what is the contact information for {OfficePhoneNumber}",
+                        "Contact Information for {OfficePhoneNumber}",
+                        "Tell me the phone number of {OfficePhoneNumber} office",
+                        "Tell me phone number of {OfficePhoneNumber} office",
+                        "What is the phone number of {OfficePhoneNumber} office",
+                        "What is the phone number of {OfficePhoneNumber}",
+                        "Tell me phone number of {OfficePhoneNumber}",
+                        "What is phone number of {OfficePhoneNumber}",
+                        "What is {OfficePhoneNumber} phone number",
+                        "Tell me the {OfficePhoneNumber} phone number",
+                        "Tell me {OfficePhoneNumber} phone number",
+                        "What is the {OfficePhoneNumber} Phone Number",
+                        "What is the number {OfficePhoneNumber}",
+                        "What's the number {OfficePhoneNumber}"
+                    ]
+                },
+                {
+                    "name": "VisitorParking",
+                    "slots": [],
+                    "samples": [
+                        "Can visitors park in P. V. A. M. U.",
+                        "Is there any visitors parking in P. V. A. M. U.",
+                        "Does P.V.A.M.U. have visitor parking"
+                    ]
+                },
+                {
+                    "name": "ParkingRestrictions",
+                    "slots": [],
+                    "samples": [
+                        "Is there any limitation on parking",
+                        "Can I park anywhere on campus",
+                        "Is there any restrictions on parking"
+                    ]
+                },
+                {
+                    "name": "AthleticsNextSportsEvent",
+                    "slots": [
+                        {
+                            "name": "pvamusportsevent",
+                            "type": "AMAZON.Sport"
+                        }
+                    ],
+                    "samples": [
+                        "when is the next {pvamusportsevent} match",
+                        "when is the next {pvamusportsevent}",
+                        "what is the next",
+                        "when is the next",
+                        "when is next",
+                        "what is next",
+                        "when is next {pvamusportsevent}",
+                        "when is the next {pvamusportsevent} meat",
+                        "when is the next {pvamusportsevent} event",
+                        "when is the next {pvamusportsevent} game",
+                        "when is the next {pvamusportsevent} meet"
+                    ]
+                },
+                {
+                    "name": "getPVAMUEvents",
+                    "slots": [
+                        {
+                            "name": "eventdate",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "What's on {eventdate}",
+                        "What is on {eventdate}",
+                        "What events are happening on campus {eventdate} ",
+                        "Do we have events {eventdate}",
+                        "Do we have events on campus {eventdate}",
+                        "Are there any events {eventdate}",
+                        "Are there any events on campus {eventdate}",
+                        "Is there any event on campus {eventdate}",
+                        "what events are happening {eventdate}",
+                        "what are the events on {eventdate}",
+                        "what are the events {eventdate}",
+                        "what events are happening on {eventdate}",
+                        "are there any events on {eventdate}",
+                        "what is the next event",
+                        "what are the upcoming events",
+                        "what are the events",
+                        "are there any events",
+                        "what events are happening on campus",
+                        "what are the events for {eventdate}",
+                        "What events are there {eventdate}",
+                        "events for {eventdate}",
+                        "events on {eventdate}",
+                        "events {eventdate}"
+                    ]
+                },
+                {
+                    "name": "ChurchVoulteeringQuery",
+                    "slots": [],
+                    "samples": [
+                        "Volunteering at my church is not considered community service. Can you explain"
+                    ]
+                },
+                {
+                    "name": "UniversityServiceHour",
+                    "slots": [],
+                    "samples": [
+                        "If the University requires me to have hours registered with the University. do the hours have to be on campus"
+                    ]
+                },
+                {
+                    "name": "GreekLetterOrg",
+                    "slots": [],
+                    "samples": [
+                        "The Greek letter organization I am interested in asked all candidates to bring in documentation or letters from the Volunteer Services Office to confirm that we have met the service requirements for the University. is this possible"
+                    ]
+                },
+                {
+                    "name": "SevisFeeQuery",
+                    "slots": [],
+                    "samples": [
+                        "I paid the S. E. V. I. S. fee and went to the embassy. however they did not have a record of my payment. Why did this happen"
+                    ]
+                },
+                {
+                    "name": "UsEntry",
+                    "slots": [],
+                    "samples": [
+                        "I applied to more than one school and received an I. twenty for each school. which one do I use to enter the United States"
+                    ]
+                },
+                {
+                    "name": "UsWorkPermission",
+                    "slots": [],
+                    "samples": [
+                        "As an international student can I work once I arrive in the U.S."
+                    ]
+                },
+                {
+                    "name": "SpouseSchoolPermission",
+                    "slots": [],
+                    "samples": [
+                        "My spouse will come to the United States as my dependent. will my spouse be able to attend school"
+                    ]
+                },
+                {
+                    "name": "SpouseWorkPermission",
+                    "slots": [],
+                    "samples": [
+                        "Will my spouse on F two status be able to work in the United States"
+                    ]
+                },
+                {
+                    "name": "FinancialAid",
+                    "slots": [],
+                    "samples": [
+                        "I will be applying for financial aid.What do I need to do"
+                    ]
+                },
+                {
+                    "name": "ParentsSeparation",
+                    "slots": [],
+                    "samples": [
+                        "My parents are separated or divorced"
+                    ]
+                },
+                {
+                    "name": "FAFSAInformation",
+                    "slots": [],
+                    "samples": [
+                        "I have more information for F. A. F. S. A."
+                    ]
+                },
+                {
+                    "name": "SpeialCircumstances",
+                    "slots": [],
+                    "samples": [
+                        "I have special circumstances not reflected on the F. A. F. S. A. How do I tell P. V. A. M. U. about this"
+                    ]
+                },
+                {
+                    "name": "EmployerInformation",
+                    "slots": [],
+                    "samples": [
+                        "I want to find more information on an employer"
+                    ]
+                },
+                {
+                    "name": "MyResume",
+                    "slots": [],
+                    "samples": [
+                        "I need assistance with my resume"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "WHSlot",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "watch the prairie view a and m university s commencement ceremony online"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Are transcripts free"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "more than one federal work study job"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Data Retrieval and why should I use it on the F. A. F. S. A.",
+                                "synonyms": [
+                                    "I. R. S. Data Retrieval Tool",
+                                    "D. R. T.  and why should I use it on the F. A. F. S. A."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prior, prior year mean",
+                                "synonyms": [
+                                    "P. P. Y",
+                                    "P. P. Y mean"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get summer financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for summer financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "with my private scholarship check"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "a refund"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "find out about my refund"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "file the F. A. F. S. A. "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my F. A. F. S. A. needed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "to file a F. A. F. S. A."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my E . F. C."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my estimated family contribution different than the amount I have to pay",
+                                "synonyms": [
+                                    "my E . F. C.  different than the amount I have to pay"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. V. A. M. U. F. A. F. S. A. school code"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "contact a financial aid counselor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "need to be verified"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chosen for verification"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "qualify for financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my financial aid counselor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "private loan or federal loan",
+                                "synonyms": [
+                                    "federal loan",
+                                    "private loan"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "federal and private loans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "have to pay back your loans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "educational loans go into repayment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sign a Master Promissory Note and complete entrance counseling",
+                                "synonyms": [
+                                    "sign a M. P. N.  and complete entrance counseling"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "common student loans"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "educational loans are available"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "accept my financial aid award letter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "reapply for financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "reapply for financial aid every year"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "should I apply for financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pay my tuition fees"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I apply for financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "deadline to apply for financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "remove a financial hold"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "financial hold"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "check my financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. V. Paw Link"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dress for career fair"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dress code for a career fair"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "to wear a suit for a career fair"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "appropriate dress for a career fair"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "know about the Career Fair if I am an International Student"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "resume assistance services at P. V. A. M. U."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get feedback on my resume"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "have my resume reviewed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my resume look like"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "included in my resume for the Career Fair"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "research employers I am interested in"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "find information about the employers I am interested in meeting with"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Career Fair and how can it benefit me as a student"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pay for visits to Student Counseling Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "students use Student Counseling Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Student Counseling Services is closed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Student Counseling Services provide sick notes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "make an appointment in Student Counseling Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H. C. S. open",
+                                "synonyms": [
+                                    "H. C. S. 's hours",
+                                    "H. C. S. hours"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "automatically be seen by a counselor"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "maximum number of visits I can have in a semester"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pay for visits to H. C. S."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H. C. S. bill my parents, my insurance, or me"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "students use H. C. S."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H. C. S. is closed"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H. C. S. provide sick notes",
+                                "synonyms": [
+                                    "sick note on campus"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "make an appointment at Health and Counseling Services",
+                                "synonyms": [
+                                    "contact H. C. S.",
+                                    "contact  Health and Counseling Services",
+                                    "make an appointment at  H. C. S."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mail something to P. V. A. M. U. "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "call facilities"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get something fixed in my room"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "submit a maintenance request"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get a referral"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H. C. S. prescribe medication"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prescription though H. C. S."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "schedule a doctors appointment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "schedule an appointment"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get a physical and or gynecological exam at H. C. S."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H. C. S. prescribe birth control"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "prescription for birth control at H. C. S."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "have a medical emergency"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "call in case of medical emergency"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "events are happening on campus today"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "students have to pay a graduation application fee"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Thanksgiving break",
+                                "synonyms": [
+                                    "Thanksgiving break begin",
+                                    "Thanksgiving break start"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fall break",
+                                "synonyms": [
+                                    "fall break begin",
+                                    "fall break start",
+                                    "fall vacation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "update my address",
+                                "synonyms": [
+                                    "I need to update my address. Where do I go to update my address"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my diploma from Prairie View A and M University's",
+                                "synonyms": [
+                                    "my diploma from P. V. A. M. U.",
+                                    "my diploma from P. V. A. M. U. University's"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Spring graduation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Prairie View A and M University's Spring commencement ceremony",
+                                "synonyms": [
+                                    "P. V. A. M. U. 's Spring commencement ceremony"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fall graduation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Prairie View A and M University's Fall commencement ceremony",
+                                "synonyms": [
+                                    "P. V. A. M. U. 's Fall commencement ceremony"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "go for graduation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Prairie View A and M University's commencement held",
+                                "synonyms": [
+                                    "Where is commencement",
+                                    "P. V. A. M. U. s commencement held"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Commencement"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "M. L. K. holiday"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "First day of spring classes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Final Exams"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Thanksgiving recess"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Veterans day",
+                                "synonyms": [
+                                    "veteran s day",
+                                    "veteran’s day"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Homecoming week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fall Mid Term Exams"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "First Day of Classes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I drop a class"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "will happen if I drop a class",
+                                "synonyms": [
+                                    "will happen if or when I drop a class",
+                                    "will happen when I drop a class"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get a registration pin",
+                                "synonyms": [
+                                    "I lost my registration pin",
+                                    "I forgot my registration pin"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "find my class schedule"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my student records"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my academic standing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "transcripts free"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "access my transcript",
+                                "synonyms": [
+                                    "get my transcript"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "know by which date I should plan to arrive in the U. S. "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I pay the S. E. V. I. S. fee and I am denied the visa"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pay the S. E. V. I. S. fee"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Student Conduct do",
+                                "synonyms": [
+                                    "services does Student Conduct provide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "a students rights if accused of a Student Conduct violation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Code of Student Conduct",
+                                "synonyms": [
+                                    "a student's rights if accused of a Student Conduct violation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my hours have not been approved and the Greek letter fraternity or sorority I am interested in accepts me for intake will this stop my entry"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "acceptable forms of documentation that will highlight service to a non profit agency"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hours of community service are students required to complete to participate in the Membership Intake M. I. P. process"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "service hours denied"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hours not been approved in the system"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "community service and volunteering"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pals"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "any Leadership programs available",
+                                "synonyms": [
+                                    "any Leadership program available"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Homecoming 2019"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Spring Fest"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "buy tickets to campus events"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. V. A. M. U. have a Student Newspaper"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cab"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Greek Life housing on campus at P. V. A. M. U. "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fraternity and Sorority Housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. V. A. M. U. ’s policy on hazing",
+                                "synonyms": [
+                                    "Fraternity and Sorority at P. V. A. M. U. haze",
+                                    "fraternities and sororities at P. V. A. M. U. haze",
+                                    "P. V. A. M. U. policy on hazing"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sorority or fraternity recruitment",
+                                "synonyms": [
+                                    "sorority recruitment",
+                                    "fraternity recruitment"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fraternity or Sorority",
+                                "synonyms": [
+                                    "Fraternity and Sorority",
+                                    "Sorority",
+                                    "Fraternity"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "student organizations are available at P. V. A. M. U. "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "my organization funded"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Involvement Fair"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "form a new organization"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "talk to my R. A. ",
+                                "synonyms": [
+                                    "talk to my Resident Assistant",
+                                    "I need to talk to my R. A."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "R. A. Office Hours",
+                                "synonyms": [
+                                    "ra Office Hours",
+                                    "are A. Office Hours",
+                                    "Resident Assistant Office Hours"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "something is damaged in my dorm",
+                                "synonyms": [
+                                    "submit a work request"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "R. A. s charged for Room and Board"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "become an R. A. ",
+                                "synonyms": [
+                                    "become a Resident Assistant"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conducts room checks"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dorm checks",
+                                "synonyms": [
+                                    "room checks"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "friends or family stay overnight in my dorm",
+                                "synonyms": [
+                                    "friends stay overnight in my dorm",
+                                    "family stay overnight in my dorm"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "visitors or guests in my dorm",
+                                "synonyms": [
+                                    "guests in my dorm",
+                                    "visitors in my dorm"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get locked out",
+                                "synonyms": [
+                                    "I am locked out of my dorm, who should I call"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "change rooms",
+                                "synonyms": [
+                                    "change room"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "request a room change",
+                                "synonyms": [
+                                    "change roommates",
+                                    "change roommate",
+                                    "change my roommates",
+                                    "change my roommate",
+                                    "request for a room change",
+                                    "room change works",
+                                    "room change work"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I cancel my housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "any penalties for cancelling housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "housing application"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I apply for housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "housing for graduate and law students",
+                                "synonyms": [
+                                    "apply for graduate or law housing",
+                                    "apply for grad or law housing"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "leased property mean"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "leased property"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kitchens in the dorms"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Northeastern dorms have kitchens"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rooms are available in A. C. C. Housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "request housing for a disability"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "need to live on campus for",
+                                "synonyms": [
+                                    "move off campus"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "freshmen and sophomores required to live on campus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "furniture is included in a dorm room"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dorm rooms come furnished"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "included in a dorm room"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "request All Gender Housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "All gender Housing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "have a pet live with me on campus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bring a pet",
+                                "synonyms": [
+                                    "pets allowed in campus housing"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. V. A. M. U. have parking lots or garages"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "park"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "any storage on campus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "store my stuff on campus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "visitors have to leave"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "have visitors in my room"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "can I have visitors in my room"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "not allowed in the residence halls"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bring to my room"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "allowed and restricted in the residence halls"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Disability Services adhere to the American Disabilities Act"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Disability Services hours of operation"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "old should my documentation be"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "documentation will I need to provide"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "resources are available in the Office of Disability Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "as a disability"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": " P. V. A. M. U. handicap accessible"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "have a learning disability"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "register with the Disability Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "research events",
+                                "synonyms": [
+                                    "upcoming research events"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get my P. V. A. M. U. panther card",
+                                "synonyms": [
+                                    "receive panther card",
+                                    "receive a panther card",
+                                    "receive the panther card",
+                                    "receive my panther card",
+                                    "replace my P. V. A. M. U. panther card",
+                                    "replace my panther card"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "need  to Bring to receive my Panther Card during New Student Orientation",
+                                "synonyms": [
+                                    "I. D is required for getting Panther Card",
+                                    "the documents which is required for Panther card",
+                                    "I. D.s are required for getting Panther Card",
+                                    "documents which is required for Panther card",
+                                    "documents required to receive Panther Card during New Student Orientation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "panther card"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spring session"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fall session"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fall or spring session"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flash briefing on P. V."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. V. flash briefing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flash briefing about P V"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flash briefing about P. V."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "library timings"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "library hours"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the panther card has"
+                            }
+                        },
+                        {
+                            "id": "panthercardcontains",
+                            "name": {
+                                "value": "panther card contains",
+                                "synonyms": [
+                                    "facilities are there in panther card",
+                                    "allowed in panther card",
+                                    "panther card include",
+                                    "P. V. A. M. U. panther card contains"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P.V.A.M.U. panther card",
+                                "synonyms": [
+                                    "panther card in P.V.A.M.U."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "auxiliary enterprises"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mission of auxiliary enterprises"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "general airport shuttle schedule",
+                                "synonyms": [
+                                    "airport shuttle timings",
+                                    "airport shuttle",
+                                    "airport  shuttle timings"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "to replace my panther ID card"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": " get research funding news"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "register for campus tour"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get research week events Calendar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "register for research week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "research week",
+                                "synonyms": [
+                                    "date for Research week"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for UNDERGRADUATE ADMISSIONS"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Summer Bridge Programs",
+                                "synonyms": [
+                                    "Are freshmen offered Summer Bridge Programs",
+                                    "Summer Bridge Program"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for admission",
+                                "synonyms": [
+                                    "to know about admission",
+                                    "way to apply for admission"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "verification"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "F.A.F.S.A. satand for",
+                                "synonyms": [
+                                    "full form of faf sa",
+                                    "faf sa satand for",
+                                    "Full Form of F.A.F.S.A"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get semester application deadlines",
+                                "synonyms": [
+                                    "to know about application deadlines",
+                                    "semester application deadlines",
+                                    "semester application deadline"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Name of ACADEMIC ADMINISTRATORS AND SUPPORT STAFF"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "qualtrics"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "request for A.V. training",
+                                "synonyms": [
+                                    "way to request for a. v. training"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A.v. manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conatct to A.V. Issues",
+                                "synonyms": [
+                                    "contact to audio visual issues",
+                                    "contact to a. b. c. issues",
+                                    "contact to a. b. c. shoes",
+                                    "contact to a. b. issues",
+                                    "the name of A. v. manager",
+                                    "contact number of Audio visual Manager of P. V. A. M. U.",
+                                    "contact University Audio Visual Manager"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "name of executive director for academic projects and space management"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "executive director for academic projects and space management"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "name of associate vice president for academic fiscal affairs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "associate vice president for academic fiscal affairs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "timings for health services",
+                                "synonyms": [
+                                    "Health services timings"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "know about the notice of non-discrimination",
+                                "synonyms": [
+                                    "way to get information on non discrimination"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Rec sports timings",
+                                "synonyms": [
+                                    "timings of rec sports"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P.V.A.M.U. Rec sports programs include",
+                                "synonyms": [
+                                    "included in PVAMU Rec Sports"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "coordinator of career fair",
+                                "synonyms": [
+                                    "Coordinator name for career fair",
+                                    "Coordinator name of career fair",
+                                    "name of the coordinator of career fair"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mail id of office of career services",
+                                "synonyms": [
+                                    "mail address of office of career services",
+                                    "email of Office of Career Services"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spring career fair are there in a year"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spring career fair",
+                                "synonyms": [
+                                    "the date for Spring career fair",
+                                    "date for Spring career fair"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "incase of emergency",
+                                "synonyms": [
+                                    "call in case of emergency",
+                                    "In case of emergency from campas"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "university police department timings",
+                                "synonyms": [
+                                    "University Police Department operational"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "register for exams",
+                                "synonyms": [
+                                    "register if I have not paid my exam fee",
+                                    "process for registering for exams"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "if I want to post anything on social media",
+                                "synonyms": [
+                                    "the P. V. A. M. U. social media channels",
+                                    "the P. V. A. M. U. social media sites",
+                                    "the P. V. A. M. U. social media sites or channel",
+                                    "contact if I want to post anything on social media channels",
+                                    "contact if I want to post anything on social media sites",
+                                    "contact if I want to post anything on social media or channels",
+                                    "contact if I want to post anything on social media"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "email for leave",
+                                "synonyms": [
+                                    "the mail address of leave Team",
+                                    "email address to apply for leave"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cooperative extension program"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business Affairs timings",
+                                "synonyms": [
+                                    "Business affairs hours of operations"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "buy P.V.A.M.U. S.H.O.F. ring"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "university business hours",
+                                "synonyms": [
+                                    "university business timings"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "buildingname",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "I did not get my diploma",
+                                "synonyms": [
+                                    "I didn't get my diploma"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "drop a class",
+                                "synonyms": [
+                                    "I need to drop a class"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "registrar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Office of the Registrar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I want to request degree verification"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": " get more information and help with the F. A. F. S. A.",
+                                "synonyms": [
+                                    "get more information on F. A. F. S. A.",
+                                    "get help with F. A. F. S. A."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "send my private scholarship check"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "complete entrance counseling"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sign a Master Promissory Note"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the financial aid forms"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Financial Aid Forms"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "accept my financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "use P. V. Paw Link"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "commencement be streamed",
+                                "synonyms": [
+                                    "the commencement be online"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "an Academic Calendar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "important dates for the upcoming school year"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "change my major"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "watch the Prairie View A and M University's commencement ceremony online"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "request degree verification"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "what courses are available",
+                                "synonyms": [
+                                    "available courses"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "what courses are required for my major or minor",
+                                "synonyms": [
+                                    "what courses are required for my minor",
+                                    "what courses are required for my major",
+                                    "What courses do I need to take for my minor",
+                                    "What courses do I need to take for my major",
+                                    "what courses are required for my minor",
+                                    "what courses are required for my major or minor"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "need to change Student Information"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mail something to P. V. A. M. U. "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "correct way to address a package to P. V. A. M. U. "
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Student Lounge areas"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "All Faiths Chapel located on campus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Office of Student Engagement"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "information about the Student Government Association",
+                                "synonyms": [
+                                    "information about the S. G. A."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "use P. V. P. A. W. Link"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "buy tickets to campus events"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "a list of student organizations"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "game room"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "report an incident"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "reach Student Conduct"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Student Conduct"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I. T. S"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "information Technology Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "veteran services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "president Office"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business affairs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "panther plaza retail center"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "commission on colleges"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "location of Veteran Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "location of president ofiice"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "information Technology Services Located"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Human Resource"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "at budget"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Athletics located",
+                                "synonyms": [
+                                    "athletics"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Alumni Affairs located",
+                                "synonyms": [
+                                    "alumni affairs"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A. G. Research located",
+                                "synonyms": [
+                                    "A. G. research"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Accounts Receivable located",
+                                "synonyms": [
+                                    "accounts receivable"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Academic Affairs located",
+                                "synonyms": [
+                                    "academic affairs"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "officephno",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "have an emergency and Student Counseling Services is not open"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "have been raped"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sick during the night or I have an emergency and H. C. S. is not open"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "for maintenance"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Disability Services be accessed through the university's web site",
+                                "synonyms": [
+                                    "disability services be accessed through the university s website"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "admission"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "doctor Danny Kelley",
+                                "synonyms": [
+                                    "Dr. danny kelley"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A.V. issues"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "help desk for support services",
+                                "synonyms": [
+                                    "support services"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "research events"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Residence Life"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Career Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Campus Master Planning and SpaceManagement"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Architecture and Arts"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Academics Affairs"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

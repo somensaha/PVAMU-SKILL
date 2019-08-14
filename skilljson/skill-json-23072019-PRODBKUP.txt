@@ -1,0 +1,949 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my panther",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AllWHQuestions",
+                    "slots": [
+                        {
+                            "name": "searchphrase",
+                            "type": "WHSlot"
+                        }
+                    ],
+                    "samples": [
+                        "who owns {searchphrase}",
+                        "from where I can {searchphrase}",
+                        "who is the {searchphrase}",
+                        "{searchphrase} whom should I contact",
+                        "tell the {searchphrase}",
+                        "whom to {searchphrase}",
+                        "what time is the {searchphrase}",
+                        "what type of {searchphrase}",
+                        "tell me the {searchphrase}",
+                        "what time is {searchphrase}",
+                        "when do we have {searchphrase}",
+                        "What features does {searchphrase}",
+                        "Tell about {searchphrase}",
+                        "what to do {searchphrase}",
+                        "what features  are {searchphrase}",
+                        "what features should we have {searchphrase}",
+                        "what features do we have {searchphrase}",
+                        "tell me about {searchphrase}",
+                        "what is the name of {searchphrase}",
+                        "what is name of {searchphrase}",
+                        "when is the {searchphrase}",
+                        "when is {searchphrase}",
+                        "where do I {searchphrase}",
+                        "where do I go for {searchphrase}",
+                        "where can I {searchphrase}",
+                        "what can I {searchphrase}",
+                        "why should I {searchphrase}",
+                        "how do you {searchphrase}",
+                        "when does the {searchphrase}",
+                        "when do the {searchphrase}",
+                        "what are the {searchphrase}",
+                        "what {searchphrase}",
+                        "what is an {searchphrase}",
+                        "what is a {searchphrase}",
+                        "when should I {searchphrase}",
+                        "how do I {searchphrase}",
+                        "{searchphrase}",
+                        "who do I {searchphrase}",
+                        "how does {searchphrase}",
+                        "what does  {searchphrase}",
+                        "what should I do if {searchphrase}",
+                        "how can {searchphrase}",
+                        "how is {searchphrase}",
+                        "when are {searchphrase}",
+                        "what should I {searchphrase}",
+                        "Are there {searchphrase}",
+                        "I want {searchphrase}",
+                        "what happens if {searchphrase}",
+                        "Tell me {searchphrase}",
+                        "Give me {searchphrase}",
+                        "who is {searchphrase}",
+                        "Is there {searchphrase}",
+                        "when does {searchphrase}",
+                        "what are {searchphrase}",
+                        "I need {searchphrase}",
+                        "when will {searchphrase}",
+                        "Can I {searchphrase}",
+                        "May I {searchphrase}",
+                        "what if {searchphrase}",
+                        "what if I {searchphrase}",
+                        "what do I do if {searchphrase}",
+                        "when will I {searchphrase}",
+                        "what do I do if I {searchphrase}",
+                        "how can I {searchphrase}",
+                        "when can I {searchphrase}",
+                        "how long does it {searchphrase}",
+                        "how many {searchphrase}",
+                        "when does  {searchphrase}",
+                        "when do {searchphrase}",
+                        "when do my {searchphrase}",
+                        "what do I {searchphrase}",
+                        "how much {searchphrase}",
+                        "what is the {searchphrase}",
+                        "what is {searchphrase}",
+                        "when does my {searchphrase}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.SelectIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StartOverIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "okay",
+                        "Sure",
+                        "OK",
+                        "Yes"
+                    ]
+                },
+                {
+                    "name": "AMAZON.ShuffleOffIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ShuffleOnIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetBuildingAddress",
+                    "slots": [
+                        {
+                            "name": "buildingname",
+                            "type": "buildingname"
+                        }
+                    ],
+                    "samples": [
+                        "tell me the address of {buildingname}",
+                        "give me the address of {buildingname}",
+                        "location of {buildingname}",
+                        "{buildingname} location",
+                        "how do I reach {buildingname}",
+                        "how to reach {buildingname}",
+                        "What is the office location of  {buildingname}",
+                        "get me the address for {buildingname}",
+                        "give me the location of {buildingname}",
+                        "tell me the location of {buildingname}",
+                        "where can I find {buildingname}",
+                        "how do I get to the {buildingname}",
+                        "where is  {buildingname} ",
+                        "where is  {buildingname} office",
+                        "{buildingname}",
+                        "how do I find the {buildingname} office",
+                        "where is the {buildingname} office located",
+                        "where is the {buildingname} office",
+                        "How can I reach the {buildingname} office",
+                        "I want to go the {buildingname} office",
+                        "how can I reach office of the {buildingname}",
+                        "How can I reach {buildingname} office",
+                        "How Can I reach the {buildingname}",
+                        "I want to go to the office of the {buildingname}",
+                        "I want to go to the {buildingname}",
+                        "where can I find office of the {buildingname}",
+                        "where can I find {buildingname} office",
+                        "where can I find the {buildingname} office",
+                        "where can I find the {buildingname}",
+                        "where is office of the {buildingname}",
+                        "give me the direction of the",
+                        "what is the location of",
+                        "what is the direction to go to",
+                        "what is the address of",
+                        "I want to reach",
+                        "what's the direction of",
+                        "what's the direction of {buildingname}",
+                        "what's the direction for {buildingname}",
+                        "I want to reach {buildingname}",
+                        "what is the address of {buildingname} building",
+                        "where is {buildingname} building",
+                        "where is {buildingname} building located",
+                        "what is the direction to go to {buildingname}",
+                        "what is the address of the {buildingname} ",
+                        "what is the address of {buildingname}",
+                        "what is the location of {buildingname}",
+                        "give me the direction of the {buildingname}",
+                        "How do I get to  {buildingname}",
+                        "where is the {buildingname}  located",
+                        "where is {buildingname}  located",
+                        "what is the address for {buildingname}",
+                        "how do I get to {buildingname}",
+                        "where is the {buildingname} located",
+                        "where is {buildingname} located",
+                        "where is the {buildingname}"
+                    ]
+                },
+                {
+                    "name": "GetPhoneNumber",
+                    "slots": [
+                        {
+                            "name": "OfficePhoneNumber",
+                            "type": "officephno"
+                        }
+                    ],
+                    "samples": [
+                        "where can I contact {OfficePhoneNumber} office",
+                        "give me the contact number of {OfficePhoneNumber}",
+                        "tell me the phone number of {OfficePhoneNumber}",
+                        "where can I contact {OfficePhoneNumber}",
+                        "what is contact of {OfficePhoneNumber}",
+                        "what is the contact of {OfficePhoneNumber}",
+                        "what is the contact information for {OfficePhoneNumber}",
+                        "Contact Information for {OfficePhoneNumber}",
+                        "Tell me the phone number of {OfficePhoneNumber} office",
+                        "Tell me phone number of {OfficePhoneNumber} office",
+                        "What is the phone number of {OfficePhoneNumber} office",
+                        "What is the phone number of {OfficePhoneNumber}",
+                        "Tell me phone number of {OfficePhoneNumber}",
+                        "What is phone number of {OfficePhoneNumber}",
+                        "What is {OfficePhoneNumber} phone number",
+                        "Tell me the {OfficePhoneNumber} phone number",
+                        "Tell me {OfficePhoneNumber} phone number",
+                        "What is the {OfficePhoneNumber} Phone Number"
+                    ]
+                },
+                {
+                    "name": "VisitorParking",
+                    "slots": [],
+                    "samples": [
+                        "Can visitors park in P. V. A. M. U.",
+                        "Is there any visitors parking in P. V. A. M. U.",
+                        "Does P.V.A.M.U. have visitor parking"
+                    ]
+                },
+                {
+                    "name": "ParkingRestrictions",
+                    "slots": [],
+                    "samples": [
+                        "Is there any limitation on parking",
+                        "Can I park anywhere on campus",
+                        "Is there any restrictions on parking"
+                    ]
+                },
+                {
+                    "name": "AthleticsNextSportsEvent",
+                    "slots": [
+                        {
+                            "name": "pvamusportsevent",
+                            "type": "AMAZON.Sport"
+                        }
+                    ],
+                    "samples": [
+                        "when is the next {pvamusportsevent} match",
+                        "when is the next {pvamusportsevent}",
+                        "what is the next",
+                        "when is the next",
+                        "when is next",
+                        "what is next",
+                        "when is next {pvamusportsevent}",
+                        "when is the next {pvamusportsevent} meat",
+                        "when is the next {pvamusportsevent} event",
+                        "when is the next {pvamusportsevent} game",
+                        "when is the next {pvamusportsevent} meet"
+                    ]
+                },
+                {
+                    "name": "getPVAMUEvents",
+                    "slots": [
+                        {
+                            "name": "eventdate",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "What's on {eventdate}",
+                        "What is on {eventdate}",
+                        "What events are happening on campus {eventdate} ",
+                        "Do we have events {eventdate}",
+                        "Do we have events on campus {eventdate}",
+                        "Are there any events {eventdate}",
+                        "Are there any events on campus {eventdate}",
+                        "Is there any event on campus {eventdate}",
+                        "what events are happening {eventdate}",
+                        "what are the events on {eventdate}",
+                        "what are the events {eventdate}",
+                        "what events are happening on {eventdate}",
+                        "are there any events on {eventdate}",
+                        "what is the next event",
+                        "what are the upcoming events",
+                        "what are the events",
+                        "are there any events",
+                        "what events are happening on campus",
+                        "what are the events for {eventdate}",
+                        "What events are there {eventdate}",
+                        "events for {eventdate}",
+                        "events on {eventdate}",
+                        "events {eventdate}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "WHSlot",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "research events",
+                                "synonyms": [
+                                    "upcoming research events"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get my P. V. A. M. U. panther card",
+                                "synonyms": [
+                                    "receive panther card",
+                                    "receive a panther card",
+                                    "receive the panther card",
+                                    "receive my panther card",
+                                    "replace my P. V. A. M. U. panther card",
+                                    "replace my panther card"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "need  to Bring to receive my Panther Card during New Student Orientation",
+                                "synonyms": [
+                                    "I. D is required for getting Panther Card",
+                                    "the documents which is required for Panther card",
+                                    "I. D.s are required for getting Panther Card",
+                                    "documents which is required for Panther card",
+                                    "documents required to receive Panther Card during New Student Orientation"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "panther card"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spring session"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fall session"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fall or spring session"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flash briefing on P. V."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P. V. flash briefing"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flash briefing about P V"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "flash briefing about P. V."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "library timings"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "library hours"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "the panther card has"
+                            }
+                        },
+                        {
+                            "id": "panthercardcontains",
+                            "name": {
+                                "value": "panther card contains",
+                                "synonyms": [
+                                    "facilities are there in panther card",
+                                    "allowed in panther card",
+                                    "panther card include",
+                                    "P. V. A. M. U. panther card contains"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P.V.A.M.U. panther card",
+                                "synonyms": [
+                                    "panther card in P.V.A.M.U."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "auxiliary enterprises"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mission of auxiliary enterprises"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "general airport shuttle schedule",
+                                "synonyms": [
+                                    "airport shuttle timings",
+                                    "airport shuttle",
+                                    "airport  shuttle timings"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "to replace my panther ID card"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": " get research funding news"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "register for campus tour"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get research week events Calendar"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "register for research week"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "research week",
+                                "synonyms": [
+                                    "date for Research week"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for financial aid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for UNDERGRADUATE ADMISSIONS"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Summer Bridge Programs",
+                                "synonyms": [
+                                    "Are freshmen offered Summer Bridge Programs",
+                                    "Summer Bridge Program"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "apply for admission",
+                                "synonyms": [
+                                    "to know about admission",
+                                    "way to apply for admission"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "verification"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "F.A.F.S.A. satand for",
+                                "synonyms": [
+                                    "full form of faf sa",
+                                    "faf sa satand for",
+                                    "Full Form of F.A.F.S.A"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "get semester application deadlines",
+                                "synonyms": [
+                                    "to know about application deadlines",
+                                    "semester application deadlines",
+                                    "semester application deadline"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Name of ACADEMIC ADMINISTRATORS AND SUPPORT STAFF"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "qualtrics"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "request for A.V. training",
+                                "synonyms": [
+                                    "way to request for a. v. training"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A.v. manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conatct to A.V. Issues",
+                                "synonyms": [
+                                    "contact to audio visual issues",
+                                    "contact to a. b. c. issues",
+                                    "contact to a. b. c. shoes",
+                                    "contact to a. b. issues",
+                                    "the name of A. v. manager",
+                                    "contact number of Audio visual Manager of P. V. A. M. U.",
+                                    "contact University Audio Visual Manager"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "name of executive director for academic projects and space management"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "executive director for academic projects and space management"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "name of associate vice president for academic fiscal affairs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "associate vice president for academic fiscal affairs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "timings for health services",
+                                "synonyms": [
+                                    "Health services timings"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "know about the notice of non-discrimination",
+                                "synonyms": [
+                                    "way to get information on non discrimination"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Rec sports timings",
+                                "synonyms": [
+                                    "timings of rec sports"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P.V.A.M.U. Rec sports programs include",
+                                "synonyms": [
+                                    "included in PVAMU Rec Sports"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "coordinator of career fair",
+                                "synonyms": [
+                                    "Coordinator name for career fair",
+                                    "Coordinator name of career fair",
+                                    "name of the coordinator of career fair"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mail id of office of career services",
+                                "synonyms": [
+                                    "mail address of office of career services",
+                                    "email of Office of Career Services"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spring career fair are there in a year"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spring career fair",
+                                "synonyms": [
+                                    "the date for Spring career fair",
+                                    "date for Spring career fair"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "incase of emergency",
+                                "synonyms": [
+                                    "call in case of emergency",
+                                    "In case of emergency from campas"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "university police department timings",
+                                "synonyms": [
+                                    "University Police Department operational"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "register for exams",
+                                "synonyms": [
+                                    "register if I have not paid my exam fee",
+                                    "process for registering for exams"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "if I want to post anything on social media",
+                                "synonyms": [
+                                    "the P. V. A. M. U. social media channels",
+                                    "the P. V. A. M. U. social media sites",
+                                    "the P. V. A. M. U. social media sites or channel",
+                                    "contact if I want to post anything on social media channels",
+                                    "contact if I want to post anything on social media sites",
+                                    "contact if I want to post anything on social media or channels",
+                                    "contact if I want to post anything on social media"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "email for leave",
+                                "synonyms": [
+                                    "the mail address of leave Team",
+                                    "email address to apply for leave"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cooperative extension program"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business Affairs timings",
+                                "synonyms": [
+                                    "Business affairs hours of operations"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "buy P.V.A.M.U. S.H.O.F. ring"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "university business hours",
+                                "synonyms": [
+                                    "university business timings"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "buildingname",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "I. T. S"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "information Technology Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "veteran services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "president Office"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business affairs"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "panther plaza retail center"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "commission on colleges"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "location of Veteran Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "location of president ofiice"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "information Technology Services Located"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Human Resource"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "at budget"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Athletics located",
+                                "synonyms": [
+                                    "athletics"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Alumni Affairs located",
+                                "synonyms": [
+                                    "alumni affairs"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A. G. Research located",
+                                "synonyms": [
+                                    "A. G. research"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Accounts Receivable located",
+                                "synonyms": [
+                                    "accounts receivable"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Academic Affairs located",
+                                "synonyms": [
+                                    "academic affairs"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "officephno",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "admission"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "doctor Danny Kelley",
+                                "synonyms": [
+                                    "Dr. danny kelley"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "A.V. issues"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "help desk for support services",
+                                "synonyms": [
+                                    "support services"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "research events"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Residence Life"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Career Services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Campus Master Planning and SpaceManagement"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Architecture and Arts"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Academics Affairs"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
