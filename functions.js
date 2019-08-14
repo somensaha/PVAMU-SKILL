@@ -168,14 +168,18 @@ module.exports = {
             }
         // }
 
+        if (obj.displayStandardCardText !== undefined) {
+            handler.withStandardCard('PVAMU', obj.displayStandardCardText.replace(/<(?:.|\n)*?>/gm, ''), this.defaultImage, this.defaultImage);
+        }
+        
         if (obj.speechText !== undefined && obj.speechText !== null) {
-            console.log('speechtext in function::', obj.speechText, typeof obj.speechText);
-            obj.speechText = obj.speechText.replace('&', 'and');
+            obj.speechText = obj.speechText.replace('&', 'and').replace(' & ', ' and ');
+            console.log('speechtext in function modified::', obj.speechText, typeof obj.speechText);
             handler.speak(obj.speechText);
         }
         if (obj.repromptSpeechText !== undefined && obj.repromptSpeechText !== null) {
             console.log('repromptSpeechText::', obj.repromptSpeechText, typeof obj.repromptSpeechText);
-            obj.repromptSpeechText = obj.repromptSpeechText.replace('&', 'and');
+            obj.repromptSpeechText = obj.repromptSpeechText.replace('&', 'and').replace(' & ', ' and ');
             handler.reprompt(obj.repromptSpeechText);
         }
 

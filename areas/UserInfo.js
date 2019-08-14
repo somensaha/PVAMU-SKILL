@@ -22,218 +22,122 @@ const UserInfo = {
             ["Department","department"]
         ]);
 
-        var attributesManager = handlerInput.attributesManager;
-        let sessionAttributes = attributesManager.getSessionAttributes();
-        if (name) {
-            sessionAttributes.name = name;
-        } else if (sessionAttributes.name && sessionAttributes.name !== '') {
-            name = sessionAttributes.name;
-        }
+        try {
+            var params = {
+                TableName : "AskPVAMUUserMaster"
+            };
+            let speechText = '';
 
-        if (contacttype) {
-            sessionAttributes.contacttype = contacttype;
-        } else if (sessionAttributes.contacttype && sessionAttributes.contacttype !== '') {
-            contacttype = sessionAttributes.contacttype;
-        }
-
-        if (userdepartment) {
-            sessionAttributes.userdepartment = userdepartment;
-        } else if (sessionAttributes.userdepartment && sessionAttributes.userdepartment !== '') {
-            userdepartment = sessionAttributes.userdepartment;
-        }
-
-        console.log('slots areeee::', name, contacttype, userdepartment);
-        var params = {
-            TableName : "AskPVAMUUserMaster"
-        };
-        let speechText = '';
-        if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'DENIED') {
-            obj = {
-                speechText: allFuctions.YesPrompt,
-                displayText: allFuctions.YesPrompt,
-                repromptSpeechText: allFuctions.listenspeech,
-                sessionEnd: false
-            }
-            return allFuctions.formSpeech(handlerInput, obj);
-        } else if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED' && name && contacttype) {
-            speechText = fullname+" belongs to the "+res[0]['Department']+". Email address would be '"+res[0]['EmailAddress']+"' You can also dial him up at "+res[0]['TelephoneNo']+" or reach his office at "+res[0]['Office']+"."
-            obj = {
-                speechText: speechText + ' ' + allFuctions.repromptSpeechText,
-                displayText: speechText + ' ' + allFuctions.repromptSpeechText,
-                repromptSpeechText: allFuctions.listenspeech,
-                sessionEnd: false
-            }
-            return allFuctions.formSpeech(handlerInput, obj);
-        } else if (name && contacttype) {
-            if (userdepartment) {
-                params['FilterExpression'] = "contains (FullName,:FullName) and contains(Department,:Department)";
-                params['ExpressionAttributeValues'] = {
-                    ":FullName" : name.replace(/\s/g,'').toLowerCase(),
-                    ":Department" : userdepartment
+            if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'DENIED') {
+                obj = {
+                    speechText: allFuctions.YesPrompt,
+                    displayText: allFuctions.YesPrompt,
+                    repromptSpeechText: allFuctions.listenspeech,
+                    sessionEnd: false
                 }
-            } else {
-                params['FilterExpression'] = "contains (FullName,:FullName)";
-                params['ExpressionAttributeValues'] = {
-                    ":FullName" : name.replace(/\s/g,'').toLowerCase()
-                }
+                return allFuctions.formSpeech(handlerInput, obj);
             }
-            
-            return fnFetchUserInfo(params, 'scan').then(res => {
-                console.log(JSON.stringify(res));
-                if (res === null || res.length === 0) {
-                    speechText = 'Sorry no records found for ' + name + '. '+ allFuctions.repromptSpeechText;
-                    obj = {
-                        speechText: speechText,
-                        displayText: speechText,
-                        repromptSpeechText: allFuctions.listenspeech,
-                        sessionEnd: false
+
+            if (name) {
+                if (userdepartment) {
+                    params['FilterExpression'] = "contains (FullName,:FullName) and contains(Department,:Department)";
+                    params['ExpressionAttributeValues'] = {
+                        ":FullName" : name.replace(/\s/g,'').toLowerCase(),
+                        ":Department" : userdepartment
                     }
-                } else if (res.length === 1) {
-                    const fullname = res[0].FirstName + " " + res[0].LastName;
-                    // if (contacttype === 'all') {
-                    //     speechText = fullname+" belongs to the "+res[0]['Department']+". Email address would be '"+res[0]['EmailAddress']+"' You can also dial him up at "+res[0]['TelephoneNo']+" or reach his office at "+res[0]['Office']+"."
-                    //     obj = {
-                    //         speechText: speechText + ' ' + allFuctions.repromptSpeechText,
-                    //         displayText: speechText + ' ' + allFuctions.repromptSpeechText,
-                    //         repromptSpeechText: allFuctions.listenspeech,
-                    //         sessionEnd: false
-                    //     }
-                    // } else {
-                        const contacttypeVal = contacttypeArr.get(contacttype);
-                        contacttypeArr.delete(contacttype);
-                        const proposedContactTypes = Array.from(contacttypeArr.values());
-                        speechText = fullname + "'s " + contacttypeVal + ' is ' + 
-                                        res[0][contacttype] + '. '+ 
-                                        "Would you also like to know " + fullname + "'s "+ proposedContactTypes.join(', ') +"?"
-                                        ;
+                } else {
+                    params['FilterExpression'] = "contains (FullName,:FullName)";
+                    params['ExpressionAttributeValues'] = {
+                        ":FullName" : name.replace(/\s/g,'').toLowerCase()
+                    }
+                }
+
+                return fnFetchUserInfo(params, 'scan').then(res => {
+                    console.log(JSON.stringify(res));
+                    if (res === null || res.length === 0) {
+                        speechText = 'Sorry no records found for ' + name + '. '+ allFuctions.repromptSpeechText;
                         obj = {
                             speechText: speechText,
                             displayText: speechText,
+                            repromptSpeechText: allFuctions.listenspeech,
                             sessionEnd: false
-
-                            // addConfirmIntentDirective: currentIntent,
-                            // slots: handlerInput.requestEnvelope.request.intent.slots
                         }
-                    // }
-                } else if (res.length > 1) {
-                    const userlist = [];
-                    res.forEach(item => {
-                        userlist.push(item.FirstName+" "+item.LastName+" from "+item['Department']);
-                    });
-                    speechText = "Would you like to contact "+userlist.join(" or ")+"?";
-                    obj = {
-                        speechText: speechText,
-                        displayText: speechText,
-                        sessionEnd: false
+                        return allFuctions.formSpeech(handlerInput, obj);
+                    } else if (res.length > 1) {
+                        const userlist = [];
+                        res.forEach(item => {
+                            userlist.push(item.FirstName+" "+item.LastName+" from "+item['Department']);
+                        });
+                        speechText = "Would you like to contact "+userlist.join(" or ")+"?";
+                        obj = {
+                            speechText: speechText,
+                            displayStandardCardText: speechText,
+                            addElicitSlotDirective: 'name'                        
+                        }
+                        return allFuctions.formSpeech(handlerInput, obj);
+                    } else {
+                        const fullname = res[0].FirstName + " " + res[0].LastName;
+                        if (contacttype || handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED') {
+                            if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED') {
+                                speechText = fullname+" belongs to the "+res[0]['Department']+'. Email address would be <say-as interpret-as="characters">'+res[0]['EmailAddress']+'</say-as>, you can also dial him up at <say-as interpret-as="telephone">'+res[0]['TelephoneNo']+'</say-as> or reach his office at <say-as interpret-as="address">'+res[0]['Office']+"</say-as>."
+                                obj = {
+                                    speechText: speechText + ' ' + allFuctions.repromptSpeechText,
+                                    displayText: speechText + ' ' + allFuctions.repromptSpeechText,
+                                    repromptSpeechText: allFuctions.listenspeech,
+                                    sessionEnd: false
+                                }
+                                return allFuctions.formSpeech(handlerInput, obj);
+                            } else if (contacttype) {
+                                const contacttypeVal = contacttypeArr.get(contacttype);
+                                contacttypeArr.delete(contacttype);
+                                const proposedContactTypes = Array.from(contacttypeArr.values());
+                                let ansVal = '';
+                                if (contacttype === 'TelephoneNo') {
+                                    ansVal = '<say-as interpret-as="telephone">'+res[0][contacttype]+'</say-as>';
+                                } else if (contacttype === 'EmailAddress') {
+                                    ansVal = '<say-as interpret-as="characters">'+res[0][contacttype]+'</say-as>';                                
+                                    // ansVal = '<sub alias="'+res[0][contacttype]+'">'+res[0][contacttype]+'</say-as>';
+                                } else if (contacttype === 'Office') {
+                                    ansVal = '<say-as interpret-as="address">'+res[0][contacttype]+'</say-as>';
+    
+                                } else {
+                                    ansVal = res[0][contacttype];
+                                }
+                                speechText = fullname + "'s " + contacttypeVal + ' is ' + ansVal +'. '+ 
+                                                "Would you also like to know " + fullname + "'s "+ proposedContactTypes.join(', ') +"?"
+                                                ;
+                                obj = {
+                                    speechText: speechText,
+                                    displayStandardCardText: speechText,
+                                    addConfirmIntentDirective: currentIntent,
+                                    slots: handlerInput.requestEnvelope.request.intent.slots
+                                }
+                                return allFuctions.formSpeech(handlerInput, obj);
+                            }
+        
+                        } else if (!contacttype) {
+                            speechText = "I can assist you with the " + Array.from(contacttypeArr.values()).join(', ') + " of " + name + ". Which contact information you want to know?";
+                            obj = {
+                                speechText: speechText,
+                                displayStandardCardText: speechText,
+                                addElicitSlotDirective: 'contacttype'
+                            }
+                            return allFuctions.formSpeech(handlerInput, obj);
+                        }
                     }
+                });
+            } else {
+                speechText = 'I could not get person name. Please say again.'
+                obj = {
+                    speechText: speechText,
+                    displayStandardCardText: speechText,
+                    addElicitSlotDirective: 'name'                        
                 }
                 return allFuctions.formSpeech(handlerInput, obj);
-            });
-        } else if (name && !contacttype) {
-            speechText = "I can assist you with the " + Array.from(contacttypeArr.values()).join(', ') + " of " + name + ". Which contact information you want to know?";
-            obj = {
-                speechText: speechText,
-                displayText: speechText,
-                sessionEnd: false
             }
-            return allFuctions.formSpeech(handlerInput, obj);
+        } catch (error) {
+             console.log(error);   
         }
-
-        obj = {
-                speechText: 'a b c',
-                displayText: 'a b c',
-                repromptSpeechText: allFuctions.listenspeech,
-                sessionEnd: false                 
-            }
-        return allFuctions.formSpeech(handlerInput, obj);
-        // var params = {
-        //     TableName : "AskPVAMUUserMaster"
-        // };
-        // let speechText = '';
-
-        // if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'DENIED') {
-        //     obj = {
-        //         speechText: allFuctions.YesPrompt,
-        //         displayText: allFuctions.YesPrompt,
-        //         repromptSpeechText: allFuctions.listenspeech,
-        //         sessionEnd: false
-        //     }
-        //     return allFuctions.formSpeech(handlerInput, obj);
-        // }
-
-        // if (name && contacttype) {
-        //     if (userdepartment) {
-        //         params['FilterExpression'] = "contains (FullName,:FullName) and contains(Department,:Department)";
-        //         params['ExpressionAttributeValues'] = {
-        //             ":FullName" : name.replace(/\s/g,'').toLowerCase(),
-        //             ":Department" : userdepartment
-        //         }
-        //     } else {
-        //         params['FilterExpression'] = "contains (FullName,:FullName)";
-        //         params['ExpressionAttributeValues'] = {
-        //             ":FullName" : name.replace(/\s/g,'').toLowerCase()
-        //         }
-        //     }
-            
-        //     return fnFetchUserInfo(params, 'scan').then(res => {
-        //         console.log(JSON.stringify(res));
-        //         if (res === null || res.length === 0) {
-        //             speechText = 'Sorry no records found for ' + name + '. '+ allFuctions.repromptSpeechText;
-        //             obj = {
-        //                 speechText: speechText,
-        //                 displayText: speechText,
-        //                 repromptSpeechText: allFuctions.listenspeech,
-        //                 sessionEnd: false
-        //             }
-        //         } else if (res.length === 1) {
-        //             const fullname = res[0].FirstName + " " + res[0].LastName;
-        //             if (contacttype === 'all') {
-        //                 speechText = fullname+" belongs to the "+res[0]['Department']+". His email address would be '"+res[0]['EmailAddress']+"' You can also dial him up at "+res[0]['TelephoneNo']+" or reach his office at "+res[0]['Office']+"."
-        //                 obj = {
-        //                     speechText: speechText + ' ' + allFuctions.repromptSpeechText,
-        //                     displayText: speechText + ' ' + allFuctions.repromptSpeechText,
-        //                     repromptSpeechText: allFuctions.listenspeech,
-        //                     sessionEnd: false
-        //                 }
-        //             } else {
-        //                 const contacttypeVal = contacttypeArr.get(contacttype);
-        //                 contacttypeArr.delete(contacttype);
-        //                 const proposedContactTypes = Array.from(contacttypeArr.values());
-        //                 speechText = fullname + "'s " + contacttypeVal + ' is ' + 
-        //                                 res[0][contacttype] + '. '+ 
-        //                                 "Would you also like to know " + fullname + "'s "+ proposedContactTypes.join(', ') +"?"
-        //                                 ;
-        //                 obj = {
-        //                     speechText: speechText,
-        //                     displayText: speechText,
-        //                     addElicitSlotDirective: 'contacttype'
-        //                 }
-        //             }
-        //         } else if (res.length > 1) {
-        //             const userlist = [];
-        //             res.forEach(item => {
-        //                 userlist.push(item.FirstName+" "+item.LastName+" from "+item['Department']);
-        //             });
-        //             speechText = "Would you like to contact "+userlist.join(" or ")+"?";
-        //             obj = {
-        //                 speechText: speechText,
-        //                 displayText: speechText,
-        //                 addElicitSlotDirective: 'name'                        
-        //             }
-        //         }
-        //         return allFuctions.formSpeech(handlerInput, obj);
-        //     });
-        // } else if (name && !contacttype) {
-        //     speechText = "I can assist you with the " + Array.from(contacttypeArr.values()).join(', ') + " of " + name + ". Which contact information you want to know?";
-        //     obj = {
-        //         speechText: speechText,
-        //         displayText: speechText,
-        //         addElicitSlotDirective: 'contacttype'
-        //     }
-        //     return allFuctions.formSpeech(handlerInput, obj);
-        // } else {
-
-        // }
     }
 }
 
