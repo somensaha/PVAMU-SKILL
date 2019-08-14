@@ -90,5 +90,4 @@ const DepartmentInfo = {
     }
 }
 
-
 module.exports = [DepartmentInfo];

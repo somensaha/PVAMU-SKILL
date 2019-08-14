@@ -2,8 +2,8 @@ const allFuctions = require('../functions');
 
 const AllWHQuestions = {
     canHandle(handlerInput) {
-        console.log("AllWHQuestions::",handlerInput.requestEnvelope.request.intent.name);
-        console.log("type::",handlerInput.requestEnvelope.request.type);
+        // console.log("AllWHQuestions::",handlerInput.requestEnvelope.request.intent.name);
+        // console.log("type::",handlerInput.requestEnvelope.request.type);
         return handlerInput.requestEnvelope.request.type === 'IntentRequest' 
             && handlerInput.requestEnvelope.request.intent.name === 'AllWHQuestions';
     },

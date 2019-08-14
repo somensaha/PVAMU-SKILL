@@ -255,15 +255,14 @@ module.exports = {
             var slotKeys = Object.keys(handlerInput.requestEnvelope.request.intent.slots);
             var slotObj = slotKeys.filter(item => {
                 return handlerInput.requestEnvelope.request.intent.slots[item].resolutions !== undefined;
-            })[0];
+            });
+            if (slotObj) {
+                slotObj = slotObj[0];
+            }
             if (slotObj !== undefined) {
                 var slotValue = handlerInput.requestEnvelope.request.intent.slots[slotObj].resolutions.resolutionsPerAuthority[0].values[0].value.name.toLowerCase();    
             } else {
                 var slotValue = null;                
-            }
-            if (handlerInput.requestEnvelope.request.intent.name === 'ClassDayOfWeekReal') {
-                var slot = handlerInput.requestEnvelope.request.intent.slots.dayofweek.value.toLowerCase();
-                var slotValue = this.daysArray.indexOf(slot);
             }
         } else {
             var intentName = handlerInput.requestEnvelope.request.intent.name;
