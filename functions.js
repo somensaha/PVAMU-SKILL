@@ -174,13 +174,13 @@ module.exports = {
         }
         
         if (obj.speechText !== undefined && obj.speechText !== null) {
-            obj.speechText = obj.speechText.replace('&', 'and').replace(' & ', ' and ');
+            obj.speechText = obj.speechText.replace('&', 'and').replace(/\s+&\s+/g, ' and ');
             console.log('speechtext in function modified::', obj.speechText, typeof obj.speechText);
             handler.speak(obj.speechText);
         }
         if (obj.repromptSpeechText !== undefined && obj.repromptSpeechText !== null) {
             console.log('repromptSpeechText::', obj.repromptSpeechText, typeof obj.repromptSpeechText);
-            obj.repromptSpeechText = obj.repromptSpeechText.replace('&', 'and').replace(' & ', ' and ');
+            obj.repromptSpeechText = obj.repromptSpeechText.replace('&', 'and').replace(/\s+&\s+/g, ' and ');
             handler.reprompt(obj.repromptSpeechText);
         }
 
