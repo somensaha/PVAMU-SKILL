@@ -1,6 +1,4 @@
 const allFuctions = require('../functions');
-const AWS = require('aws-sdk');
-
 
 const UserInfo = {
     canHandle(handlerInput) {
@@ -52,7 +50,7 @@ const UserInfo = {
                     }
                 }
 
-                return fnFetchUserInfo(params, 'scan').then(res => {
+                return allFuctions.fnDynamoScan(params, 'scan').then(res => {
                     console.log(JSON.stringify(res));
                     if (res === null || res.length === 0) {
                         speechText = 'Sorry no records found for ' + name + '. '+ allFuctions.repromptSpeechText;
@@ -139,34 +137,6 @@ const UserInfo = {
              console.log(error);   
         }
     }
-}
-
-
-const fnFetchUserInfo = function(params, scanType) {
-    return new Promise((resolve, reject) => {
-        var docClient = new AWS.DynamoDB.DocumentClient();
-        if (scanType === 'scan') {
-            docClient.scan(params, onScan);            
-        } else if (scanType === 'query') {
-            docClient.query(params, onScan);
-        }
-        function onScan(err, data) {
-            if (err) {
-                console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
-                resolve(null);
-            } else {
-                console.log("Query Scan succeeded." + JSON.stringify(data));
-                if (scanType === 'scan') {
-                    if (typeof data.LastEvaluatedKey != "undefined") {
-                        console.log("Scanning for more...");
-                        params.ExclusiveStartKey = data.LastEvaluatedKey;
-                        docClient.scan(params, onScan);
-                    }
-                }
-                resolve(data.Items);
-            }
-        }
-    });
 }
 
 module.exports = [UserInfo];
