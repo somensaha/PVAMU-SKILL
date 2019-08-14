@@ -15,6 +15,7 @@ module.exports = {
     dayNames: {0:'Sunday',1:'Monday',2:'Tuesday',3:'Wednesday',4:'Thursday',5:'Friday',6:'Saturday'},
     PVAMUStaticTable: 'AskPVAMUStatic',
     PVAMUDynamicTable: 'AskPVAMUDynamic',
+    PVAMUDepartmentMaster:'AskPVAMUDeptMaster',
     
     defaultImage: 'https://pvamu-prod.s3.amazonaws.com/pvamu-logo-large1.png',
 
@@ -395,8 +396,6 @@ module.exports = {
 			});
         });
     },
-
-    
 
     dynamicDynamoScan: function(params = null) {
         return new Promise((resolve, reject) => {

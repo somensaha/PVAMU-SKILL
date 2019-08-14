@@ -9,6 +9,7 @@ const FinancialAid = require('./areas/FinancialAid');
 const International = require('./areas/International');
 const VolunteersService = require('./areas/VolunteersService');
 const UserInfo = require('./areas/UserInfo');
+const DepartmentMaster = require('./areas/DepartmentMaster');
 const DepartmentInfo = require('./areas/DepartmentInfo');
 const Leave = require('./areas/Leave');
 const APP_ID = process.env.APP_ID;
@@ -170,8 +171,8 @@ const ErrorHandler = {
 
 exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
-    LaunchRequestHandler,
-    Unhandled,...Customs,...Parking,...Leave, ...UserInfo, ...DepartmentInfo,
+    LaunchRequestHandler, 
+    Unhandled,...Customs,...Parking,...Leave, ...DepartmentMaster, ...UserInfo, ...DepartmentInfo,
     ...CareerService,...FinancialAid,...International,...VolunteersService,...AllWhQuestions,
     HelpIntentHandler, PauseIntentHandler, YesIntentHandler, 
     OtherBuiltinHanders, FallbackIntentHandler, SessionEndedRequestHandler,CancelAndStopIntentHandler
