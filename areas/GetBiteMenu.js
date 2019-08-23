@@ -142,7 +142,7 @@ const GetBiteMenu = {
                     if (mealtime && mealcourse) {
                         let selectedDayMenu = body.filter(item => {
                             // console.log(item, mealcourse);
-                            if (item['meal'].toLowerCase() === mealtime.toLowerCase() && item['formalName'].trim() !== '' && item['startTime'].split('T')[0] === eventdate && item['course'] && item['course'].toLowerCase() === mealcourse.toLowerCase()) {
+                            if (item['meal'].toLowerCase() === mealtime.toLowerCase() && item['formalName'].trim() !== '' && item['startTime'] && item['startTime'].split('T')[0] === eventdate && item['course'] && item['course'].toLowerCase() === mealcourse.toLowerCase()) {
                                 return item;
                             }
                         });
