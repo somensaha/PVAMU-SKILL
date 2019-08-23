@@ -12,6 +12,7 @@
     "ask-sdk": "^2.3.0",
     "aws-sdk": "^2.393.0",
     "dateformat": "^3.0.3",
+    "fuse.js": "^3.4.5",
     "request": "^2.88.0",
     "string-similarity": "^3.0.0",
     "string-strip-html": "^3.5.0"

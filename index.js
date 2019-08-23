@@ -9,6 +9,7 @@ const FinancialAid = require('./areas/FinancialAid');
 const International = require('./areas/International');
 const VolunteersService = require('./areas/VolunteersService');
 const UserInfo = require('./areas/UserInfo');
+const GetBiteMenu = require('./areas/GetBiteMenu');
 const DepartmentMaster = require('./areas/DepartmentMaster');
 const DepartmentInfo = require('./areas/DepartmentInfo');
 const Leave = require('./areas/Leave');
@@ -159,7 +160,7 @@ const ErrorHandler = {
 		return true;
 	},
 	handle(handlerInput, error) {
-        console.log(`Error Handler:: ${error.message}`);
+        console.log(`Error Handler:: ${error}`);
         var obj = {
             speechText: allFuctions.noValueReturned,
             displayText: allFuctions.noValueReturned,
@@ -172,7 +173,7 @@ const ErrorHandler = {
 exports.handler = Alexa.SkillBuilders.custom()
   .addRequestHandlers(
     LaunchRequestHandler, 
-    Unhandled,...Customs,...Parking,...Leave, ...DepartmentMaster, ...UserInfo, ...DepartmentInfo,
+    Unhandled,...Customs,...Parking,...Leave, ...DepartmentMaster, ...UserInfo, ...DepartmentInfo, ...GetBiteMenu,
     ...CareerService,...FinancialAid,...International,...VolunteersService,...AllWhQuestions,
     HelpIntentHandler, PauseIntentHandler, YesIntentHandler, 
     OtherBuiltinHanders, FallbackIntentHandler, SessionEndedRequestHandler,CancelAndStopIntentHandler
