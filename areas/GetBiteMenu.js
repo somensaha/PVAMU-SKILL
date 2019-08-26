@@ -14,14 +14,14 @@ const GetBiteMenu = {
         // var fooditem = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.fooditem);
         var mealtime = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.mealtime);
         var calorieadj = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.calorieadj);
-        var mealcourse = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.mealcourse);
+        var foodtype = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.foodtype);
         var eventdate = handlerInput.requestEnvelope.request.intent.slots.eventdate.value;
         if (!eventdate) {
             eventdate = new Date().toISOString().split('T')[0];
         }
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         var eventDay = days[new Date(eventdate).getDay()].toLowerCase();
-        console.log(fooditem, eventdate, mealtime, calorieadj, mealcourse);
+        console.log(fooditem, eventdate, mealtime, calorieadj, foodtype);
         console.log('eventDay', eventDay);
         var obj = null;
         var url = 'https://pvamu.s3.amazonaws.com/PVAMU_Menu_Data.json';
@@ -139,17 +139,29 @@ const GetBiteMenu = {
                 }
 
                 if (eventdate) {
-                    if (mealtime && mealcourse) {
+                    if (mealtime && foodtype) {
                         let selectedDayMenu = body.filter(item => {
-                            // console.log(item, mealcourse);
-                            if (item['meal'].toLowerCase() === mealtime.toLowerCase() && item['formalName'].trim() !== '' && item['startTime'] && item['startTime'].split('T')[0] === eventdate && item['course'] && item['course'].toLowerCase() === mealcourse.toLowerCase()) {
-                                return item;
+                            // console.log(item, foodtype);
+                            if (item['meal'].toLowerCase() === mealtime.toLowerCase() && item['formalName'].trim() !== '' && item['startTime'] && item['startTime'].split('T')[0] === eventdate) {
+                                if (foodtype === 'vegan') {
+                                    if (item['isVegan']) {
+                                        return item;
+                                    }
+                                } else if (foodtype === 'veg') {
+                                    if (item['isVegetarian']) {
+                                        return item;
+                                    }
+                                } else if (foodtype === 'non-veg') {
+                                    if (!item['isVegetarian'] && !item['isVegan']) {
+                                        return item;
+                                    }
+                                }
                             }
                         });
                         eventdate = new Date(eventdate);
                         console.log('selectedDayMenu', selectedDayMenu);
                         if (selectedDayMenu.length === 0) {
-                            speechText = 'Unfortunately we are not serving any such cources under '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+                            speechText = 'Unfortunately we are not serving any '+foodtype+' items under '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
                             obj = {
                                 speechText: speechText + '. '+allFuctions.repromptSpeechText,
                                 displayText: speechText + '. '+allFuctions.repromptSpeechText,
@@ -162,10 +174,10 @@ const GetBiteMenu = {
                             var menuItems = selectedDayMenu.map(menIt => {
                                 return menIt['formalName']+' with '+menIt['kcal']+'kCal';
                             });
-                            speechText = 'For '+mealtime+' under '+mealcourse+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have '+menuItems.join(', ');
+                            speechText = 'For '+mealtime+' under '+foodtype+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n');
                             obj = {
-                                speechText: speechText + '. '+allFuctions.repromptSpeechText,
-                                displayText: speechText + '. '+allFuctions.repromptSpeechText,
+                                speechText: speechText + '. \n'+allFuctions.repromptSpeechText,
+                                displayText: speechText + '. \n'+allFuctions.repromptSpeechText,
                                 repromptSpeechText: allFuctions.listenspeech,
                                 sessionEnd: false
                             }
@@ -174,7 +186,7 @@ const GetBiteMenu = {
                             var menuItems = selectedDayMenu.map(menIt => {
                                 return menIt['formalName'];
                             });
-                            speechText = 'For '+mealtime+' under '+mealcourse+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have '+menuItems.join(', ')+'. Would you also like to know calories of food?';
+                            speechText = 'For '+mealtime+' under '+foodtype+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n')+'.\n Would you also like to know calories of food?';
                             obj = {
                                 speechText: speechText,
                                 displayStandardCardText: speechText,
@@ -183,9 +195,9 @@ const GetBiteMenu = {
                             }
                             return allFuctions.formSpeech(handlerInput, obj);
                         }
-                    }else if (mealtime && !mealcourse) {
+                    }else if (mealtime && !foodtype) {
                         let selectedDayMenu = body.filter(item => {
-                            if (item['meal'].toLowerCase() === mealtime.toLowerCase() && item['formalName'].trim() !== '' && item['startTime'].split('T')[0] === eventdate && item['course'] !== null) {
+                            if (item['meal'].toLowerCase() === mealtime.toLowerCase() && item['formalName'].trim() !== '' && item['startTime'].split('T')[0] === eventdate) {
                                 return item;
                             }
                         });
@@ -193,7 +205,7 @@ const GetBiteMenu = {
                         eventdate = new Date(eventdate);
                         console.log('selectedDayMenu', selectedDayMenu);
                         if (selectedDayMenu.length === 0) {
-                            speechText = 'Unfortunately we do not have any course for '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+                            speechText = 'Unfortunately we do not have any menu for '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
                             obj = {
                                 speechText: speechText + '. '+allFuctions.repromptSpeechText,
                                 displayText: speechText + '. '+allFuctions.repromptSpeechText,
@@ -202,16 +214,16 @@ const GetBiteMenu = {
                             }
                             return allFuctions.formSpeech(handlerInput, obj);
                         }
-                        let menuItems = selectedDayMenu.map(menIt => {
-                            return menIt['course'];
-                        });
-                        menuItems = [...new Set(menuItems)];
+                        // let menuItems = selectedDayMenu.map(menIt => {
+                        //     return menIt['course'];
+                        // });
+                        // menuItems = [...new Set(menuItems)];
                         // console.log('menuItems', menuItems);
-                        speechText = 'For '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we offer menu from the following courses: '+menuItems.join(', ')+'. Which course menu would you like to know?';
+                        speechText = 'For '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' I can assist you for Vegan, Veg & Non-Veg food. Which one would you like to know?';
                         obj = {
                             speechText: speechText,
                             displayStandardCardText: speechText,
-                            addElicitSlotDirective: 'mealcourse' 
+                            addElicitSlotDirective: 'foodtype' 
                         }
                         return allFuctions.formSpeech(handlerInput, obj);
                     } else {
