@@ -149,7 +149,7 @@ const GetBiteMenu = {
                         eventdate = new Date(eventdate);
                         console.log('selectedDayMenu', selectedDayMenu);
                         if (selectedDayMenu.length === 0) {
-                            speechText = 'Unfortunately we do not have any menu for '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+                            speechText = 'Unfortunately we are not serving any such cources under '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
                             obj = {
                                 speechText: speechText + '. '+allFuctions.repromptSpeechText,
                                 displayText: speechText + '. '+allFuctions.repromptSpeechText,
