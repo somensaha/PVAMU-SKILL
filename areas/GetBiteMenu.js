@@ -98,9 +98,9 @@ const GetBiteMenu = {
                     }
 
                     if (mealtime) {
-                        speechText = 'The '+calorieadj+' caloried food for '+eventDay+'\'s '+mealtime+' is the '+body[0]['formalName']+' with '+body[0]['kcal']+'kCal';
+                        speechText = 'The '+calorieadj+' caloried food for '+eventDay+'\'s '+mealtime+' is the '+body[0]['formalName']+' with '+body[0]['calories']+'kCal';
                     } else {
-                        speechText = 'The '+calorieadj+' caloried food in '+eventDay+'\'s menu is the '+body[0]['formalName']+' with '+body[0]['kcal']+'kCal';
+                        speechText = 'The '+calorieadj+' caloried food in '+eventDay+'\'s menu is the '+body[0]['formalName']+' with '+body[0]['calories']+'kCal';
                     }
                     obj = {
                         speechText: speechText + '. '+allFuctions.repromptSpeechText,
@@ -172,7 +172,7 @@ const GetBiteMenu = {
                         }
                         if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'CONFIRMED') {
                             var menuItems = selectedDayMenu.map(menIt => {
-                                return menIt['formalName']+' with '+menIt['kcal']+'kCal';
+                                return menIt['formalName']+' with '+menIt['calories']+'kCal';
                             });
                             speechText = 'For '+mealtime+' under '+foodtype+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n');
                             obj = {
