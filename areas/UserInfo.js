@@ -114,7 +114,7 @@ const UserInfo = {
                             }
         
                         } else if (!contacttype) {
-                            speechText = "I can assist you with the " + Array.from(contacttypeArr.values()).join(', ') + " of " + name + ". Which contact information you want to know?";
+                            speechText = "I can assist you with the " + Array.from(contacttypeArr.values()).join(', ') + " of " + fullname + ". Which contact information you want to know?";
                             obj = {
                                 speechText: speechText,
                                 displayStandardCardText: speechText,
