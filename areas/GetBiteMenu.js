@@ -24,7 +24,7 @@ const GetBiteMenu = {
         console.log(fooditem, eventdate, mealtime, calorieadj, foodtype);
         console.log('eventDay', eventDay);
         var obj = null;
-        var url = 'https://pvamu.s3.amazonaws.com/PVAMU_Menu_Data.json';
+        var url = process.env.MENU_S3_URL;
         var speechText = null;
 
         if (handlerInput.requestEnvelope.request.intent.confirmationStatus === 'DENIED') {
