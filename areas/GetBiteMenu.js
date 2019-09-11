@@ -16,6 +16,11 @@ const GetBiteMenu = {
         var calorieadj = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.calorieadj);
         var foodtype = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.foodtype);
         var eventdate = handlerInput.requestEnvelope.request.intent.slots.eventdate.value;
+        var foodtypeArr = {
+            'vegan': 'Vegan',
+            'veg': "Vegeterian",
+            'non-veg': 'Non-Vegetarian'
+        }
         if (!eventdate) {
             eventdate = new Date().toISOString().split('T')[0];
         }
@@ -161,7 +166,7 @@ const GetBiteMenu = {
                         eventdate = new Date(eventdate);
                         console.log('selectedDayMenu', selectedDayMenu);
                         if (selectedDayMenu.length === 0) {
-                            speechText = 'Unfortunately we are not serving any '+foodtype+' items under '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+                            speechText = 'Unfortunately we are not serving any '+foodtypeArr[foodtype]+' items under '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
                             obj = {
                                 speechText: speechText + '. '+allFuctions.repromptSpeechText,
                                 displayText: speechText + '. '+allFuctions.repromptSpeechText,
@@ -174,7 +179,7 @@ const GetBiteMenu = {
                             var menuItems = selectedDayMenu.map(menIt => {
                                 return menIt['formalName']+' with '+menIt['calories']+'kCal';
                             });
-                            speechText = 'For '+mealtime+' under '+foodtype+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n');
+                            speechText = 'For '+mealtime+' under '+foodtypeArr[foodtype]+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n');
                             obj = {
                                 speechText: speechText + '. \n'+allFuctions.repromptSpeechText,
                                 displayText: speechText + '. \n'+allFuctions.repromptSpeechText,
@@ -186,7 +191,7 @@ const GetBiteMenu = {
                             var menuItems = selectedDayMenu.map(menIt => {
                                 return menIt['formalName'];
                             });
-                            speechText = 'For '+mealtime+' under '+foodtype+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n')+'.\n Would you also like to know calories of food?';
+                            speechText = 'For '+mealtime+' under '+foodtypeArr[foodtype]+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n')+'.\n Would you also like to know calories of food?';
                             obj = {
                                 speechText: speechText,
                                 displayStandardCardText: speechText,
@@ -219,7 +224,7 @@ const GetBiteMenu = {
                         // });
                         // menuItems = [...new Set(menuItems)];
                         // console.log('menuItems', menuItems);
-                        speechText = 'For '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' I can assist you for Vegan, Veg & Non-Veg food. Which one would you like to know?';
+                        speechText = 'For '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' I can assist you for Vegetarian, Vegan and Non-Vegetarian food. Which one would you like to know?';
                         obj = {
                             speechText: speechText,
                             displayStandardCardText: speechText,
