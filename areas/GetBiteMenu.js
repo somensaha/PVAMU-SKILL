@@ -191,12 +191,15 @@ const GetBiteMenu = {
                             var menuItems = selectedDayMenu.map(menIt => {
                                 return menIt['formalName'];
                             });
-                            speechText = 'For '+mealtime+' under '+foodtypeArr[foodtype]+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n')+'.\n Would you also like to know calories of food?';
+                            speechText = 'For '+mealtime+' under '+foodtypeArr[foodtype]+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n')+'.\n If you wish to know the calorie information try asking, "What is the calorie for '+menuItems[0]+'?"';
                             obj = {
                                 speechText: speechText,
-                                displayStandardCardText: speechText,
-                                addConfirmIntentDirective: currentIntent,
-                                slots: handlerInput.requestEnvelope.request.intent.slots
+                                displayText: speechText,
+                                repromptSpeechText: allFuctions.listenspeech,
+                                sessionEnd: false
+                                // displayStandardCardText: speechText,
+                                // addConfirmIntentDirective: currentIntent,
+                                // slots: handlerInput.requestEnvelope.request.intent.slots
                             }
                             return allFuctions.formSpeech(handlerInput, obj);
                         }
