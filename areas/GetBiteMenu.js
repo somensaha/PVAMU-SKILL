@@ -16,6 +16,8 @@ const GetBiteMenu = {
         var calorieadj = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.calorieadj);
         var foodtype = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.foodtype);
         var eventdate = handlerInput.requestEnvelope.request.intent.slots.eventdate.value;
+        var defaultdisplaymsg = 'Unfortunately, I was not able to get the information, you can view the menu at https://menus.sodexomyway.com/BiteMenu/Menu?menuId=14912&locationId=77011001&whereami=http://pvamu.sodexomyway.com/dining-near-me/memorial';
+        var defaultspeechmsg = 'Unfortunately, I was not able to get the information, you can view the menu at the link displayed in the card';
         var foodtypeArr = {
             'vegan': 'Vegan',
             'veg': "Vegeterian",
@@ -75,14 +77,14 @@ const GetBiteMenu = {
                     }
 
                     if (body.length === 0) {
-                        if (mealtime) {
-                            speechText = 'Unfortunately we do not have any menu for '+mealtime+' on '+eventDay;
-                        } else {
-                            speechText = 'Unfortunately we do not have any menu on '+eventDay;
-                        }
+                        // if (mealtime) {
+                        //     speechText = 'Unfortunately we do not have any menu for '+mealtime+' on '+eventDay;
+                        // } else {
+                        //     speechText = 'Unfortunately we do not have any menu on '+eventDay;
+                        // }
                         obj = {
-                            speechText: speechText + '. '+allFuctions.repromptSpeechText,
-                            displayText: speechText + '. '+allFuctions.repromptSpeechText,
+                            speechText: defaultspeechmsg + '. '+allFuctions.repromptSpeechText,
+                            displayText: defaultdisplaymsg + '. '+allFuctions.repromptSpeechText,
                             repromptSpeechText: allFuctions.listenspeech,
                             sessionEnd: false
                         }
@@ -168,8 +170,8 @@ const GetBiteMenu = {
                         if (selectedDayMenu.length === 0) {
                             speechText = 'Unfortunately we are not serving any '+foodtypeArr[foodtype]+' items under '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
                             obj = {
-                                speechText: speechText + '. '+allFuctions.repromptSpeechText,
-                                displayText: speechText + '. '+allFuctions.repromptSpeechText,
+                                speechText: defaultspeechmsg + '. '+allFuctions.repromptSpeechText,
+                                displayText: defaultdisplaymsg + '. '+allFuctions.repromptSpeechText,
                                 repromptSpeechText: allFuctions.listenspeech,
                                 sessionEnd: false
                             }
@@ -214,12 +216,12 @@ const GetBiteMenu = {
                         eventdate = new Date(eventdate);
                         console.log('selectedDayMenu', selectedDayMenu);
                         if (selectedDayMenu.length === 0) {
-                            displayText = 'Unfortunately, I was not able to get the information, you can view the menu at https://menus.sodexomyway.com/BiteMenu/Menu?menuId=14912&locationId=77011001&whereami=http://pvamu.sodexomyway.com/dining-near-me/memorial';
-                            speechText = 'Unfortunately, I was not able to get the information, you can view the menu at the link displayed in the card';
+                            // displayText = 'Unfortunately, I was not able to get the information, you can view the menu at https://menus.sodexomyway.com/BiteMenu/Menu?menuId=14912&locationId=77011001&whereami=http://pvamu.sodexomyway.com/dining-near-me/memorial';
+                            // speechText = 'Unfortunately, I was not able to get the information, you can view the menu at the link displayed in the card';
                             // speechText = 'Unfortunately we do not have any menu for '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
                             obj = {
-                                speechText: speechText + '. '+allFuctions.repromptSpeechText,
-                                displayText: displayText + '. '+allFuctions.repromptSpeechText,
+                                speechText: defaultspeechmsg + '. '+allFuctions.repromptSpeechText,
+                                displayText: defaultdisplaymsg + '. '+allFuctions.repromptSpeechText,
                                 repromptSpeechText: allFuctions.listenspeech,
                                 sessionEnd: false
                             }
@@ -254,16 +256,16 @@ const GetBiteMenu = {
                     }
                 }
                 obj = {
-                    speechText: allFuctions.noValueReturned,
-                    displayText: allFuctions.noValueReturned,
+                    speechText: defaultspeechmsg+ '. '+allFuctions.repromptSpeechText,
+                    displayText: defaultdisplaymsg+ '. '+allFuctions.repromptSpeechText,
                     repromptSpeechText: allFuctions.listenspeech,
                     sessionEnd: false
                 }
                 return allFuctions.formSpeech(handlerInput, obj);
             } else {
                 obj = {
-                    speechText: allFuctions.noValueReturned,
-                    displayText: allFuctions.noValueReturned,
+                    speechText: defaultspeechmsg+ '. '+allFuctions.repromptSpeechText,
+                    displayText: defaultdisplaymsg+ '. '+allFuctions.repromptSpeechText,
                     repromptSpeechText: allFuctions.listenspeech,
                     sessionEnd: false
                 }
