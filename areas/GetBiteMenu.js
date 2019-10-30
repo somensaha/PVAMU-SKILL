@@ -16,7 +16,7 @@ const GetBiteMenu = {
         var calorieadj = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.calorieadj);
         var foodtype = allFuctions.getDialogSlotValue(handlerInput.requestEnvelope.request.intent.slots.foodtype);
         var eventdate = handlerInput.requestEnvelope.request.intent.slots.eventdate.value;
-        var defaultdisplaymsg = 'Unfortunately, I was not able to get the information, you can view the menu at https://menus.sodexomyway.com/BiteMenu/Menu?menuId=14912&locationId=77011001&whereami=http://pvamu.sodexomyway.com/dining-near-me/memorial';
+        var defaultdisplaymsg = 'Unfortunately, I was not able to get the information, you can view the menu at https://pvamu.sodexomyway.com/dining-near-me/memorial';
         var defaultspeechmsg = 'Unfortunately, I was not able to get the information, you can view the menu at the link displayed in the card';
         var foodtypeArr = {
             'vegan': 'Vegan',
