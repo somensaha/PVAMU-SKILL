@@ -214,10 +214,12 @@ const GetBiteMenu = {
                         eventdate = new Date(eventdate);
                         console.log('selectedDayMenu', selectedDayMenu);
                         if (selectedDayMenu.length === 0) {
-                            speechText = 'Unfortunately we do not have any menu for '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+                            displayText = 'Unfortunately, I was not able to get the information, you can view the menu at https://menus.sodexomyway.com/BiteMenu/Menu?menuId=14912&locationId=77011001&whereami=http://pvamu.sodexomyway.com/dining-near-me/memorial';
+                            speechText = 'Unfortunately, I was not able to get the information, you can view the menu at the link displayed in the card';
+                            // speechText = 'Unfortunately we do not have any menu for '+mealtime+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
                             obj = {
                                 speechText: speechText + '. '+allFuctions.repromptSpeechText,
-                                displayText: speechText + '. '+allFuctions.repromptSpeechText,
+                                displayText: displayText + '. '+allFuctions.repromptSpeechText,
                                 repromptSpeechText: allFuctions.listenspeech,
                                 sessionEnd: false
                             }
