@@ -194,10 +194,11 @@ const GetBiteMenu = {
                             speechText = 'For '+mealtime+' under '+foodtypeArr[foodtype]+' on '+eventdate.toLocaleDateString("en-US", {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'})+' we have \n'+menuItems.join(', \n')+'.\n If you wish to know the calorie information try asking, "What is the calorie for '+menuItems[0]+'?"';
                             obj = {
                                 speechText: speechText,
-                                displayText: speechText,
+                                // displayText: speechText,
                                 repromptSpeechText: allFuctions.listenspeech,
-                                sessionEnd: false
-                                // displayStandardCardText: speechText,
+                                sessionEnd: false,
+                                displayStandardCardText: speechText,
+                                addElicitSlotDirective: 'fooditem'
                                 // addConfirmIntentDirective: currentIntent,
                                 // slots: handlerInput.requestEnvelope.request.intent.slots
                             }
@@ -234,6 +235,8 @@ const GetBiteMenu = {
                             addElicitSlotDirective: 'foodtype' 
                         }
                         return allFuctions.formSpeech(handlerInput, obj);
+                    } else if (!fooditem && handlerInput.requestEnvelope.request.dialogState === '') {
+
                     } else {
                         if (eventDay === 'sunday' || eventDay === 'saturday') {
                             speechText = 'Would you like to get the menu for brunch or dinner?';
