@@ -40,11 +40,11 @@ module.exports = {
     repromptSpeechText: 'What else would you like to know?',
     noValueReturned: "Sorry I couldn't find any information on that or maybe I misunderstood you. Please try again.",
     listenspeech: 'Is there anything else I can help you with?',
-	helpspeech: 'My Panther is designed to answer your university questions on topics like Financial Aid, Housing, Registrar and so on, e.g. How can I check my financial aid. What would you like to know?',
+	helpspeech: 'My Panther is designed to answer your university questions on topics like Financial Aid, Housing, Registrar and so on, e.g. You can ask by saying How can I check my financial aid. What would you like to know?',
     YesPrompt: ' What would you like to know?',
     needtoLinkYourAccount: 'To access this service you need to link your account with Alexa.',
     optOutCategory: 'You have opted out of this category of questions.',
-    welcomeMessage: "Welcome to the Prairie view <sub alias=\"A and M\">A & M</sub> University My Panther Skill. My Panther is designed to answer your university questions on topics like Financial Aid, Housing, Registrar and so on, e.g. How can I check my financial aid. What would you like to know?",
+    welcomeMessage: "Welcome to the Prairie view <sub alias=\"A and M\">A & M</sub> University My Panther Skill. My Panther is designed to answer your university questions on topics like Financial Aid, Housing, Registrar and so on, e.g. You can ask by saying How can I check my financial aid. What would you like to know?",
     signUpMessage: 'You have not registered with PVAMU portal, Please sign up',
     semilinkWelcomeMessage: "Welcome to the My Panther Skill. ",
 	
