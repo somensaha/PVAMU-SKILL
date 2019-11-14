@@ -45,7 +45,8 @@ const HelpIntentHandler = {
 			var helpspeech = allFuctions.helpspeech;
 			var obj = {
 			  speechText: helpspeech,
-			  displayText: helpspeech,
+        displayText: helpspeech,
+        repromptSpeechText: allFuctions.listenspeech,
 			  sessionEnd: false
 			}
 			return allFuctions.formSpeech(handlerInput, obj);
